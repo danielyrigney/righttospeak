@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Button, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-export default class ButtonView extends React.Component {
+export default class ButtonView extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            button: {
+                text: 'Hello!'
+            }
+        };
+    }
+
     updateDisplayText = () => {
-        this.props.updateDisplayText('Hello');
+        const { text } = this.state.button;
+
+        this.props.updateDisplayText(text);
     }
 
     render() {

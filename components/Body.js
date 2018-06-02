@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import ButtonView from '../ButtonView';
+
+import ButtonView from './ButtonView';
 
 export default class Body extends Component {
-  updateDisplayText = (phrase) => {
-    this.props.updateDisplayText(phrase);
+  updateDisplayText = (text) => {
+    this.props.updateDisplayText(text);
   }
 
   render() {

@@ -13,9 +13,17 @@ export default class MainView extends Component {
     };
   }
 
-  updateDisplayText = (phrase) => {
+  clearDisplayText = () => {
     this.setState({
-      displayText: this.state.displayText + ' ' + phrase
+      ...this.state,
+      displayText: ''
+    })
+  }
+
+  updateDisplayText = (text) => {
+    this.setState({
+      ...this.state,
+      displayText: this.state.displayText + ' ' + text
     });
   }
 
@@ -34,9 +42,5 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'blue',
     height: '100%',
-  },
-
-  header: {
-
   }
 });
