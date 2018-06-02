@@ -23,6 +23,8 @@ export default class ButtonView extends Component {
             <View style={styles.container}>
                 <TouchableOpacity title="" onPress={this.updateDisplayText} >
                     <View>
+                        <ButtonTitle />
+                        <ButtonImage />
                         <Text style={styles.text}> {this.props.text} </Text>
                     </View>
                 </TouchableOpacity>
