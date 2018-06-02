@@ -11,7 +11,10 @@ export default class Body extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ButtonView updateDisplayText={this.updateDisplayText} />
+        <ButtonView
+          button={this.props.buttons[0]}
+          updateDisplayText={this.updateDisplayText}
+        />
       </View>
     );
   }

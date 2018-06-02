@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Button, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
+import ButtonTitle from './ButtonTitle';
+
 export default class ButtonView extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            button: {
-                text: 'Hello!'
-            }
+            button: props.button
         };
     }
 
@@ -19,11 +19,13 @@ export default class ButtonView extends Component {
     }
 
     render() {
+        const { text } = this.state.button;
+
         return (
             <View style={styles.container}>
                 <TouchableOpacity title="" onPress={this.updateDisplayText} >
                     <View>
-                        <ButtonTitle />
+                        <ButtonTitle text={text} />
                         <ButtonImage />
                     </View>
                 </TouchableOpacity>
@@ -32,13 +34,6 @@ export default class ButtonView extends Component {
     }
 }
 
-const ButtonTitle = () => {
-    const titleText = "changing the title";
-
-    return (
-        <Text style={styles.text}>{`${titleText}`}</Text>
-    )
-};
 
 const ButtonImage = () => {
     //const icon = this.props;
