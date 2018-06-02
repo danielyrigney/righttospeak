@@ -32,7 +32,10 @@ export default class MainView extends Component {
       <View style={styles.container}>
         <HeaderBar displayText={this.state.displayText} clearDisplayText={this.clearDisplayText} />
 
-        <Body updateDisplayText={this.updateDisplayText} />
+        <Body
+          buttons={this.props.buttons}
+          updateDisplayText={this.updateDisplayText}
+        />
       </View>
     );
   }

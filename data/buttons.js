@@ -1,4 +1,4 @@
-[
+export default buttons = [
     {
         "id": "0",
         "text": "I",
@@ -534,4 +534,4 @@
         },
         "boards": ["0"]
     }
-]
+];
