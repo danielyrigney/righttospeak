@@ -9,15 +9,22 @@ export default class MainView extends Component {
     super(props);
 
     this.state = {
-      displayText: 'Hello world!!!'
+      displayText: ''
     };
+  }
+
+  updateDisplayText = (phrase) => {
+    this.setState({
+      displayText: this.state.displayText + ' ' + phrase
+    });
   }
 
   render() {
     return (
       <View style={styles.container}>
         <HeaderBar displayText={this.state.displayText}/>
-        <Body />
+
+        <Body updateDisplayText={this.updateDisplayText} />
       </View>
     );
   }

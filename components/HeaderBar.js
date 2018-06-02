@@ -5,7 +5,7 @@ export default class HeaderBar extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.bigblue}>{this.props.displayText}</Text>
+        <Text style={styles.text}>{this.props.displayText}</Text>
       </View>
     );
   }
@@ -13,21 +13,20 @@ export default class HeaderBar extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'green',
+    backgroundColor: '#f5f5f5',
 
     ...Platform.select({
       ios: {
-        backgroundColor: 'red',
         top: 100,
-        height: 100
+        height: '20%'
       },
       android: {
-        backgroundColor: 'blue',
         height: '200'
       },
     }),
   },
-  bigblue: {
+
+  text: {
     color: 'blue',
     fontWeight: 'bold',
     fontSize: 30,

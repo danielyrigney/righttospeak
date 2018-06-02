@@ -2,10 +2,14 @@ import React from 'react';
 import { Button, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default class ButtonView extends React.Component {
+    updateDisplayText = () => {
+        this.props.updateDisplayText('Hello');
+    }
+
     render() {
         return (
             <View style={styles.container}>
-                <TouchableOpacity title="" onPress={() => { }} >
+                <TouchableOpacity title="" onPress={this.updateDisplayText} >
                     <View>
                         <Text style={styles.text}>Hello!</Text>
                         <Image source={require('./assets/icon.png')} resizeMode="contain" />
