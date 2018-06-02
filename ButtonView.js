@@ -1,15 +1,17 @@
 import React from 'react';
-import { Button, Image, StyleSheet, Text, View } from 'react-native';
+import { Button, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default class ButtonView extends React.Component {
     render() {
         return (
-            <View style = {styles.container} >
-                <Button title="Hey! Press Me!" onPress = {() => { }}>
-                    <Text>SIMPLE!</Text>
-                </Button>
+            <View style={styles.container}>
+                <TouchableOpacity title="" onPress={() => { }} >
+                    <View>
+                        <Text style={styles.text}>Hello!</Text>
+                        <Image source={require('./assets/icon.png')} resizeMode="contain" />
+                    </View>
+                </TouchableOpacity>
             </View>
-
         );
     }
 }
@@ -38,15 +40,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     text: {
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 50,
+        textAlign: 'center',
     },
     image: {
-        flex: 1,
-        height: undefined,
-        width: undefined
     }
 });
