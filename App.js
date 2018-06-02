@@ -5,7 +5,10 @@ import ButtonView from './ButtonView';
 export default class App extends React.Component {
   render() {
     return (
-      <ButtonView />
+      <View>
+        <ButtonView />
+        <MainView />
+      </View>
     );
   }
 }
