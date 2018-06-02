@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import ButtonView from './ButtonView';
+import MainView from './components/MainView';
 
 export default class App extends React.Component {
   render() {
