@@ -13,14 +13,12 @@ export default class HeaderBar extends Component {
 
 const styles = StyleSheet.create({
   container: {
-      backgroundColor: '#000',
+      backgroundColor: 'green',
+      height: '20%'
   },
   bigblue: {
     color: 'blue',
     fontWeight: 'bold',
     fontSize: 30,
-  },
-  red: {
-    color: 'red',
-  },
+  }
 });
