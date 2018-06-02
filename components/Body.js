@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import HeaderBar from './HeaderBar.js';
-import Body from './Body.js';
+import ButtonView from '../ButtonView';
 
-export default class MainView extends Component {
+export default class Body extends Component {
   render() {
     return (
       <View>
-        <HeaderBar/>
-        <Body />
+        <ButtonView />
       </View>
     );
   }
