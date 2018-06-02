@@ -12,7 +12,13 @@ export default class Body extends Component {
   render() {
     return (
       <View style={styles.container}>
+
         <Board/>
+        <ButtonView
+          button={this.props.buttons[0]}
+          updateDisplayText={this.updateDisplayText}
+        />
+
       </View>
     );
   }
@@ -24,8 +30,8 @@ const styles = StyleSheet.create({
 
     ...Platform.select({
       ios: {
-        top: 100,
-        height: '80%'
+        top: 10,
+        height: '95%'
       },
       android: {
         height: '200'
