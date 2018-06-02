@@ -15,14 +15,14 @@ export function normalize(size) {
   }
 }
 
+import ButtonTitle from './ButtonTitle';
+
 export default class ButtonView extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            button: {
-                text: 'Hello!'
-            }
+            button: props.button
         };
     }
 
@@ -33,11 +33,21 @@ export default class ButtonView extends Component {
     }
 
     render() {
+        const { text } = this.state.button;
+
         return (
             <View style={styles.container}>
+
                 <TouchableOpacity title="" onPress={this.updateDisplayText} style={styles.touchableOpacityContainer}>
                     <View style={styles.textContainer}>
                         <ButtonTitle />
+                <TouchableOpacity title="" onPress={this.updateDisplayText} >
+                    <View>
+                        <ButtonTitle text={text} />
+
+
+                        <ButtonImage />
+                        <Text style={styles.text}> {this.props.text} </Text>
                     </View>
                     <View style={styles.imageContainer}>  
                         <ButtonImage />
@@ -48,13 +58,6 @@ export default class ButtonView extends Component {
     }
 }
 
-const ButtonTitle = () => {
-    const titleText = "changing the title";
-
-    return (
-        <Text style={styles.text}>{`${titleText}`}</Text>
-    )
-};
 
 const ButtonImage = () => {
     //const icon = this.props;
