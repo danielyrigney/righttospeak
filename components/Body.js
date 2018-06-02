@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 
 import ButtonView from './ButtonView';
+import Board from './Board';
 
 export default class Body extends Component {
   updateDisplayText = (text) => {
@@ -11,7 +12,7 @@ export default class Body extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ButtonView updateDisplayText={this.updateDisplayText} />
+        <Board/>
       </View>
     );
   }
