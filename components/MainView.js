@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, StatusBar } from 'react-native';
+
+const statusBarHeight = StatusBar.currentHeight || 20;
 
 import HeaderBar from './HeaderBar.js';
 import Body from './Body.js';
@@ -40,7 +42,8 @@ export default class MainView extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'blue',
+    marginTop: statusBarHeight,
+    // backgroundColor: 'blue',
     height: '100%',
   }
 });
