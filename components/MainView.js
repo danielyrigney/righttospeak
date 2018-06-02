@@ -30,7 +30,7 @@ export default class MainView extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <HeaderBar displayText={this.state.displayText}/>
+        <HeaderBar displayText={this.state.displayText} clearDisplayText={this.clearDisplayText} />
 
         <Body updateDisplayText={this.updateDisplayText} />
       </View>
