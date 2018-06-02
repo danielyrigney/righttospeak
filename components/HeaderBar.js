@@ -23,23 +23,24 @@ export default class HeaderBar extends Component {
 
 const styles = StyleSheet.create({
   headerContainer: {
-    backgroundColor: 'green',
-
     ...Platform.select({
       ios: {
         backgroundColor: '#f5f5f5',
         color: '#000',
-        top: 50,
-        height: screenHeight * 0.05
+        top: 5,
+        height: screenHeight * 0.1
       },
       android: {
-        backgroundColor: 'blue',
-        height: '200'
+        backgroundColor: '#f5f5f5',
+        height: screenHeight * 0.1
       },
     }),
 
     display: 'flex',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    borderColor: 'black',
+    borderTopWidth: 2,
+    borderBottomWidth: 2
   },
 
 
@@ -54,15 +55,18 @@ const styles = StyleSheet.create({
   },
 
   clearButtonContainer: {
-    flexGrow: 1
+    flexGrow: 1,
+    backgroundColor: '#232323',
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
   },
   clearButtonTouchable: {
     alignItems: 'center',
-    backgroundColor: '#232323',
     padding: 10,
+    paddingVertical: 30
   },
   clearButtonText: {
     color: "#eee",
-    fontSize: 18,
+    fontSize: 24,
   }
 });

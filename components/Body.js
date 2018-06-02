@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
 
     ...Platform.select({
       ios: {
-        top: 100,
-        height: '80%'
+        top: 10,
+        height: '95%'
       },
       android: {
         height: '200'
