@@ -27,6 +27,7 @@ export default class ButtonView extends Component {
                     <View>
                         <ButtonTitle text={text} />
                         <ButtonImage />
+                        <Text style={styles.text}> {this.props.text} </Text>
                     </View>
                 </TouchableOpacity>
             </View>
