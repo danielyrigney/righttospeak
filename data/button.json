@@ -394,4 +394,144 @@
         },
         "boards": ["0"]
     },
+    {
+        "id": "30",
+        "text": "River",
+        "partOfSpeech": "noun",
+        "type": "fringe",
+        "symbol": "/R/river_P.bmp",
+        "coordinates": {
+            "5_8": {
+                "x": 6,
+                "y": 0
+            }
+        },
+        "boards": ["0"]
+    },
+    {
+        "id": "31",
+        "text": "Fly",
+        "partOfSpeech": "noun",
+        "type": "fringe",
+        "symbol": "/F/fly1_P.bmp",
+        "coordinates": {
+            "5_8": {
+                "x": 6,
+                "y": 1
+            }
+        },
+        "boards": ["0"]
+    },
+    {
+        "id": "32",
+        "text": "Doctor",
+        "partOfSpeech": "noun",
+        "type": "fringe",
+        "symbol": "/D/Dr1_P.bmp",
+        "coordinates": {
+            "5_8": {
+                "x": 6,
+                "y": 2
+            }
+        },
+        "boards": ["0"]
+    },
+    {
+        "id": "33",
+        "text": "Taco",
+        "partOfSpeech": "noun",
+        "type": "fringe",
+        "symbol": "/T/taco1_P.bmp",
+        "coordinates": {
+            "5_8": {
+                "x": 6,
+                "y": 3
+            }
+        },
+        "boards": ["0"]
+    },
+    {
+        "id": "34",
+        "text": "Bicycle",
+        "partOfSpeech": "noun",
+        "type": "fringe",
+        "symbol": "/B/bike1_P.bmp",
+        "coordinates": {
+            "5_8": {
+                "x": 6,
+                "y": 4
+            }
+        },
+        "boards": ["0"]
+    },
+    {
+        "id": "35",
+        "text": "Bus",
+        "partOfSpeech": "noun",
+        "type": "fringe",
+        "symbol": "/B/bus1a_P.bmp",
+        "coordinates": {
+            "5_8": {
+                "x": 7,
+                "y": 0
+            }
+        },
+        "boards": ["0"]
+    },
+    {
+        "id": "36",
+        "text": "Police",
+        "partOfSpeech": "verb",
+        "type": "fringe",
+        "symbol": "/P/policeman2b_P.bmp",
+        "coordinates": {
+            "5_8": {
+                "x": 7,
+                "y": 1
+            }
+        },
+        "boards": ["0"]
+    },
+    {
+        "id": "37",
+        "text": "Trash",
+        "partOfSpeech": "noun",
+        "type": "fringe",
+        "symbol": "/T/trash can_P.bmp",
+        "coordinates": {
+            "5_8": {
+                "x": 7,
+                "y": 2
+            }
+        },
+        "boards": ["0"]
+    },
+    {
+        "id": "38",
+        "text": "Cat",
+        "partOfSpeech": "noun",
+        "type": "fringe",
+        "symbol": "/C/cat1_P.bmp",
+        "coordinates": {
+            "5_8": {
+                "x": 7,
+                "y": 3
+            }
+        },
+        "boards": ["0"]
+    },
+    {
+        "id": "39",
+        "text": "Dog",
+        "partOfSpeech": "noun",
+        "type": "fringe",
+        "symbol": "/D/dog1_P.bmp",
+        "coordinates": {
+            "5_8": {
+                "x": 7,
+                "y": 4
+            }
+        },
+        "boards": ["0"]
+    }
 ]
