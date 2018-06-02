@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View } from 'react-native';
 
 export default class HeaderBar extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.bigblue}>This is the HeaderBar!</Text>
+        <Text style={styles.bigblue}>{this.props.displayText}</Text>
       </View>
     );
   }
@@ -13,8 +13,19 @@ export default class HeaderBar extends Component {
 
 const styles = StyleSheet.create({
   container: {
-      backgroundColor: 'green',
-      height: '20%'
+    backgroundColor: 'green',
+
+    ...Platform.select({
+      ios: {
+        backgroundColor: 'red',
+        top: 100,
+        height: 100
+      },
+      android: {
+        backgroundColor: 'blue',
+        height: '200'
+      },
+    }),
   },
   bigblue: {
     color: 'blue',

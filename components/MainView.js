@@ -5,10 +5,18 @@ import HeaderBar from './HeaderBar.js';
 import Body from './Body.js';
 
 export default class MainView extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      displayText: 'Hello world!!!'
+    };
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <HeaderBar style={styles.header}/>
+        <HeaderBar displayText={this.state.displayText}/>
         <Body />
       </View>
     );
@@ -18,11 +26,10 @@ export default class MainView extends Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'blue',
-    height: '100%'
+    height: '100%',
   },
 
   header: {
-    backgroundColor: 'green',
-    height: '200'
+
   }
 });
