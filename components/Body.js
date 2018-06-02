@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 
-import ButtonView from './ButtonView';
+import GridOfButtons from './GridOfButtons';
 
 export default class Body extends Component {
   updateDisplayText = (text) => {
@@ -11,8 +11,8 @@ export default class Body extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ButtonView
-          button={this.props.buttons[0]}
+        <GridOfButtons
+          buttons={this.props.buttons}
           updateDisplayText={this.updateDisplayText}
         />
       </View>
