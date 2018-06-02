@@ -23,8 +23,8 @@ export default class ButtonView extends Component {
             <View style={styles.container}>
                 <TouchableOpacity title="" onPress={this.updateDisplayText} >
                     <View>
-                        <ButtonTitle />
-                        <ButtonImage />
+                        <Text style={styles.text}>Hello!</Text>
+                        <Image source={require('./assets/icon.png')} resizeMode="contain" />
                     </View>
                 </TouchableOpacity>
             </View>
@@ -33,19 +33,16 @@ export default class ButtonView extends Component {
 }
 
 const ButtonTitle = () => {
-    const titleText = "changing the title";
-
     return (
-        <Text style={styles.text}>{`${titleText}`}</Text>
+        <Text style={{paddingTop: 50}}>test</Text>
     )
 };
 
 const ButtonImage = () => {
     //const icon = this.props;
-    const iconFilePath = "A/a_P.bmp";
 
     return (
-        <Image source={require(`../assets/${iconFilePath}`)} resizeMode="contain" />
+        <Image style={styles.image} source={require('./assets/icon.png')} resizeMode="contain" />
     )
 };
 

@@ -9,15 +9,30 @@ export default class MainView extends Component {
     super(props);
 
     this.state = {
-      displayText: 'Hello world!!!'
+      displayText: ''
     };
+  }
+
+  clearDisplayText = () => {
+    this.setState({
+      ...this.state,
+      displayText: ''
+    })
+  }
+
+  updateDisplayText = (text) => {
+    this.setState({
+      ...this.state,
+      displayText: this.state.displayText + ' ' + text
+    });
   }
 
   render() {
     return (
       <View style={styles.container}>
         <HeaderBar displayText={this.state.displayText}/>
-        <Body />
+
+        <Body updateDisplayText={this.updateDisplayText} />
       </View>
     );
   }
@@ -27,9 +42,5 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'blue',
     height: '100%',
-  },
-
-  header: {
-
   }
 });
