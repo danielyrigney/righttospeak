@@ -36,11 +36,10 @@ The new word is displayed on the button.
 
 ## Technologies used:
 
-* Expo
-* React
 * React Native
 * React Native Responsive Grid
 * React Native Speech
+* Expo
 
 ## Credits:
 
