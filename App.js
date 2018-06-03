@@ -160,7 +160,44 @@ export default class App extends Component {
             possibleImagesForButton: []
         });
     }
-    
+
+    goToNewPage = (actionType) => {
+      this.setState({
+          ...this.state,
+
+          buttons: [
+            {
+                id: "1",
+                text: "Me",
+                partOfSpeech: "pronoun",
+                type: "core",
+                imageId: "1",
+                coordinates: {
+                    "5_8": {
+                        x: 2,
+                        y: 0
+                    }
+                },
+                boards: ["0"]
+            },
+            {
+                id: "2",
+                text: "My",
+                partOfSpeech: "pronoun",
+                type: "core",
+                imageId: "2",
+                coordinates: {
+                    "5_8": {
+                        x: 3,
+                        y: 0
+                    }
+                },
+                boards: ["0"]
+            }
+          ]
+      });
+    }
+
     render() {
         if (this.state.isEditButtonModalVisible) {
             const { buttonToEdit_id: id } = this.state;
@@ -248,7 +285,7 @@ export default class App extends Component {
                         buttons={this.state.buttons}
                     />
                 </View>
-            </View >    
+            </View >
             );
 
         } else {
@@ -260,6 +297,7 @@ export default class App extends Component {
                         updateDisplayText={this.updateDisplayText}
                         toggleEditButton={this.toggleEditButton}
                         launchEditButtonModal={this.launchEditButtonModal}
+                        goToNewPage={this.goToNewPage}
 
                         displayText={this.state.displayText}
                         isEditButtonModalVisible={this.state.isEditButtonModalVisible}

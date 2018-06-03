@@ -11,6 +11,7 @@ export default class Body extends Component {
                     buttons={this.props.buttons}
                     updateDisplayText={this.props.updateDisplayText}
                     launchEditButtonModal={this.props.launchEditButtonModal}
+                    goToNewPage={this.props.goToNewPage}
                 />
             </View>
         );

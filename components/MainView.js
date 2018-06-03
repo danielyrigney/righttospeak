@@ -19,6 +19,7 @@ export default class MainView extends Component {
                     buttons={this.props.buttons}
                     updateDisplayText={this.props.updateDisplayText}
                     launchEditButtonModal={this.props.launchEditButtonModal}
+                    goToNewPage={this.props.goToNewPage}
                 />
             </View>
         );

@@ -52,12 +52,12 @@ export default class ButtonView extends Component {
     }
 
     render() {
-        const { text, imageId } = this.state.button;
+        const { text, imageId, type } = this.state.button;
         const imageURL = images.find(image => image.id === imageId).imageURL;
 
         return (
             <View style={[styles.container, { borderColor: Constants.colorScheme[this.state.button.partOfSpeech] }]}>
-                <TouchableOpacity title="" onPress={this.onPressOnView} onLongPress={this.onPressOnEdit} style={styles.touchableOpacityContainer}>
+                <TouchableOpacity title="" onPress={type === 'action' ? this.props.goToNewPage : this.onPressOnView} onLongPress={this.onPressOnEdit} style={styles.touchableOpacityContainer}>
                     <View style={styles.textContainer}>
                         <ButtonTitle title={text} />
                     </View>

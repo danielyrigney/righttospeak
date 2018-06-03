@@ -48,6 +48,7 @@ const Board = (props) => {
                             button={button}
                             updateDisplayText={properties.updateDisplayText}
                             launchEditButtonModal={properties.launchEditButtonModal}
+                            goToNewPage={properties.goToNewPage}
                         />
                     </TouchableOpacity>
                 </Column>
