@@ -5,6 +5,8 @@ import ButtonImage from './ButtonImage';
 import Constants from '../data/constants';
 import { Speech } from 'expo';
 
+import { Constants, Speech } from 'expo';
+
 export default class ButtonView extends Component {
     constructor(props) {
         super(props);
@@ -36,17 +38,26 @@ export default class ButtonView extends Component {
         });
     };
 
-    updateDisplayText = () => {
+    onPressOnView = () => {
         const { text } = this.state.button;
         this.props.updateDisplayText(text);
+        this.speakText();
+    }
+
+    onPressOnEdit = () => {
+      this.props.launchEditButtonModal();
     }
 
     render() {
         const { text } = this.state.button;
 
+        const onPress = () => {
+          this.props.isEditingButton ? this.onPressOnEdit() : this.onPressOnView();
+        };
+
         return (
             <View style={[styles.container, {borderColor: Constants.colorScheme[this.state.button.partOfSpeech]}]}>
-                <TouchableOpacity title="" onPress={() => {this.updateDisplayText(); this.speakText()}} style={styles.touchableOpacityContainer}>
+                <TouchableOpacity title="" onPress={onPress} style={styles.touchableOpacityContainer}>
                     <View style={styles.imageContainer}>
                         <ButtonImage path={this.state.button.imageURL}/>
                     </View>
@@ -66,7 +77,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
-        borderWidth: 5, 
+        borderWidth: 5,
         borderColor: 'red',
         borderRadius: 50,
         backgroundColor: 'transparent',

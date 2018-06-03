@@ -29,7 +29,7 @@ const showAll = (e) => {
 };
 
 const Board = (props) => {
-  const { button } = props;
+  const { button, properties } = props;
   const buttonColor = Constants.colorScheme[button.partOfSpeech];
 
   return (
@@ -41,28 +41,32 @@ const Board = (props) => {
       xlSize={sizes.xl} 
       style={{backgroundColor: 'white'}}
     >
-      <Row 
-          smSizePoints={props.state.layout.grid ? props.state.layout.grid.height / 2 : 0} 
-          mdSizePoints={props.state.layout.grid ? props.state.layout.grid.width / 2 : 0} 
-          lgSizePoints={props.state.layout.grid ? props.state.layout.grid.width / 3 : 0} 
+      <Row
+          smSizePoints={props.state.layout.grid ? props.state.layout.grid.height / 2 : 0}
+          mdSizePoints={props.state.layout.grid ? props.state.layout.grid.width / 2 : 0}
+          lgSizePoints={props.state.layout.grid ? props.state.layout.grid.width / 3 : 0}
           xlSizePoints={props.state.layout.grid ? props.state.layout.grid.width / 4 : 0}
           alignLines="stretch"
       >
-       <Col fullWidth> 
+       <Col fullWidth>
          <Row rtl>
            <Col fullWidth offsetPoints={10}>
              <TouchableOpacity onPress={() => {}}>
                <Text style={{fontSize: 22, marginTop: 15}}>
+
                  <ButtonView
                   button={button}
-                  updateDisplayText={props.updateDisplayText}
+                  updateDisplayText={properties.updateDisplayText}
+                  launchEditButtonModal={properties.launchEditButtonModal}
+                  isEditingButton={properties.isEditingButton}
                 />
+
                </Text>
              </TouchableOpacity>
            </Col>
          </Row>
        </Col>
-       <Col fullWidth hAlign='center'> 
+       <Col fullWidth hAlign='center'>
          <Text style={{fontSize: 48, marginTop: 5}}>
            {props.id}
          </Text>
@@ -72,12 +76,12 @@ const Board = (props) => {
   )
 };
 
-const layout = (buttons, state, updateDisplayText) => {
+const layout = (buttons, state, props) => {
   return buttons.map(button => {
-    return ([<Board 
+    return ([<Board
         button={button}
         state={state}
-        updateDisplayText={updateDisplayText}
+        properties={props}
 
         key={button.id}
         id={button.id}
@@ -89,9 +93,6 @@ const layout = (buttons, state, updateDisplayText) => {
 };
 
 export default class GridOfButtons extends Component {
-  updateDisplayText = (text) => {
-    this.props.updateDisplayText(text);
-  }
 
   render() {
     const { buttons } = this.props;
@@ -100,11 +101,11 @@ export default class GridOfButtons extends Component {
       <Grid>{
         ({ state, setState }) => {
           return (
-            <Col fullHeight style={{backgroundColor: 'lightgray'}}> 
+            <Col fullHeight style={{backgroundColor: 'lightgray'}}>
               <ScrollView removeClippedSubviews={true} >
                 <TouchableOpacity activeOpacity={1} onPress={(e) => showAll(e)}>
                   <Row>{
-                    layout(buttons, state, this.updateDisplayText)
+                    layout(buttons, state, this.props)
                   }</Row>
                 </TouchableOpacity>
               </ScrollView>
