@@ -16,7 +16,7 @@ export default class ButtonView extends Component {
             language: 'en'
         };
     }
-    
+
     speakText = () => {
         const start = () => {
             this.setState({ inProgress: true });
@@ -56,11 +56,11 @@ export default class ButtonView extends Component {
         return (
             <View style={[styles.container, {borderColor: Constants.colorScheme[this.state.button.partOfSpeech]}]}>
                 <TouchableOpacity title="" onPress={onPress} style={styles.touchableOpacityContainer}>
-                    <View style={styles.imageContainer}>
-                        <ButtonImage path={this.state.button.imageURL}/>
-                    </View>
                     <View style={styles.textContainer}>
                         <ButtonTitle title={this.state.button.text}/>
+                    </View>
+                    <View style={styles.imageContainer}>
+                        <ButtonImage path={this.state.button.imageURL}/>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -70,27 +70,26 @@ export default class ButtonView extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         width: '100%',
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
         borderWidth: 5,
         borderColor: 'red',
-        borderRadius: 50,
-        backgroundColor: 'transparent',
+        borderRadius: 30,
+        backgroundColor: 'transparent'
     },
     touchableOpacityContainer: {
         flex: 1,
     },
     textContainer: {
-        flex: 2,
+        paddingTop: 20,
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%'
     },
     imageContainer: {
-        flex: 8,
+        // paddingTop: 50,
         alignItems: 'center'
     }
 });
