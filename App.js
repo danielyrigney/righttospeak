@@ -77,13 +77,15 @@ export default class App extends Component {
 
     // Set edit button to visible
     launchEditButtonModal = (id) => {
+        const index = buttons.findIndex(button => button.id === id);
+
         this.setState({
             ...this.state,
 
             isEditButtonModalVisible: true,
             buttonToEdit_id: id,
-            buttonToEdit_text: this.state.buttons[id].text,
-            buttonToEdit_imageId: this.state.buttons[id].imageId
+            buttonToEdit_text: this.state.buttons[index].text,
+            buttonToEdit_imageId: this.state.buttons[index].imageId
         });
     }
 
@@ -209,9 +211,6 @@ export default class App extends Component {
 
     render() {
         if (this.state.isEditButtonModalVisible) {
-            const { buttonToEdit_id: id } = this.state;
-            let button = this.state.buttons[id];
-
             return (
                 <View>
                     <Modal
@@ -222,7 +221,7 @@ export default class App extends Component {
                         <View style={styles.modalContainer}>
                             <View style={styles.innerModal}>
                                 <StatusBar hidden={true} />
-                                <Text style={styles.modalTitle}>Edit Button Details</Text>
+                                <Text style={styles.modalTitle}>Edit Button</Text>
                                 <View style={styles.outerFormContainer}>
                                     <View style={styles.formItemContainer}>
                                         <Text style={styles.label}>Button Text:</Text>
@@ -254,7 +253,7 @@ export default class App extends Component {
                                                 horizontal={true}
                                                 data={this.state.possibleImagesForButton}
                                                 renderItem={({ item }) => (
-                                                    <TouchableOpacity onPress={() => {
+                                                    <TouchableOpacity style={styles.buttonPreviewContainer} onPress={() => {
                                                         this.setState({
                                                             ...this.state,
                                                             buttonToEdit_imageId: item.id
@@ -333,7 +332,7 @@ const styles = StyleSheet.create({
     },
 
     innerModal: {
-        height: screenHeight * 0.5,
+        height: screenHeight * 0.6,
         width: screenWidth * 0.7,
         marginTop: 200,
         backgroundColor: '#E6E8F2',
@@ -343,11 +342,13 @@ const styles = StyleSheet.create({
         borderColor: '#4E598C',
         borderRadius: 26,
     },
+
     modalTitle: {
         paddingTop: 45,
         fontSize: normalize(40),
         marginBottom: 12
     },
+
     label: {
         fontSize: normalize(20),
         fontWeight: 'bold',
@@ -368,7 +369,11 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     flatListContainer: {
-        height: screenHeight * 0.2,
+        height: screenHeight * 0.13,
+    },
+    buttonPreviewContainer: {
+        borderWidth: 2,
+        borderColor: 'black'
     },
     formCancelButtons: {
         flexDirection: 'row',
