@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Image, StyleSheet, Text, ScrollView, ImageBackground, TouchableOpacity, View } from 'react-native';
-import { Row, Column as Col, ScreenInfo, Grid/*, setBreakPoints*/ } from 'react-native-responsive-grid'
+import { Row, Column as Col, ScreenInfo, Grid/*, setBreakPoints*/ } from 'react-native-responsive-grid';
 
 import ButtonView from './ButtonView';
 import Constants from '../data/constants';

@@ -4,7 +4,7 @@ export default buttons = [
         "text": "I",
         "partOfSpeech": "pronoun",
         "type": "core",
-        "symbol": "/I/I1_P.bmp",
+        "imageURL": require('../assets/I/I1_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 1,
@@ -17,7 +17,7 @@ export default buttons = [
         "text": "Me",
         "partOfSpeech": "pronoun",
         "type": "core",
-        "symbol": "/M/me5.bmp",
+        "imageURL": require('../assets/M/me5.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 2,
@@ -30,7 +30,7 @@ export default buttons = [
         "text": "My",
         "partOfSpeech": "pronoun",
         "type": "core",
-        "symbol": "/M/my2_P.bmp",
+        "imageURL": require('../assets/M/my2_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 3,
@@ -43,7 +43,7 @@ export default buttons = [
         "text": "Want",
         "partOfSpeech": "pronoun",
         "type": "core",
-        "symbol": "/W/want_P.bmp",
+        "imageURL": require('../assets/W/want_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 4,
@@ -56,7 +56,7 @@ export default buttons = [
         "text": "Him",
         "partOfSpeech": "pronoun",
         "type": "core",
-        "symbol": "/H/him2_P.bmp",
+        "imageURL": require('../assets/H/him2_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 5,
@@ -69,7 +69,7 @@ export default buttons = [
         "text": "Her",
         "partOfSpeech": "pronoun",
         "type": "core",
-        "symbol": "/H/her3_P.bmp",
+        "imageURL": require('../assets/H/her3_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 1,
@@ -82,7 +82,7 @@ export default buttons = [
         "text": "She",
         "partOfSpeech": "pronoun",
         "type": "core",
-        "symbol": "/S/she1_P.bmp",
+        "imageURL": require('../assets/S/she1_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 2,
@@ -95,7 +95,7 @@ export default buttons = [
         "text": "He",
         "partOfSpeech": "pronoun",
         "type": "core",
-        "symbol": "/H/he1_P.bmp",
+        "imageURL": require('../assets/H/he1_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 3,
@@ -108,7 +108,7 @@ export default buttons = [
         "text": "Like",
         "partOfSpeech": "verb",
         "type": "core",
-        "symbol": "/L/like_P.bmp",
+        "imageURL": require('../assets/L/like_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 4,
@@ -121,7 +121,7 @@ export default buttons = [
         "text": "Stop",
         "partOfSpeech": "verb",
         "type": "core",
-        "symbol": "/S/stop_P.bmp",
+        "imageURL": require('../assets/S/stop_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 5,
@@ -134,7 +134,7 @@ export default buttons = [
         "text": "Come",
         "partOfSpeech": "verb",
         "type": "core",
-        "symbol": "/P/come_P.bmp",
+        "imageURL": require('../assets/C/come_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 1,
@@ -147,7 +147,7 @@ export default buttons = [
         "text": "Go",
         "partOfSpeech": "verb",
         "type": "core",
-        "symbol": "/G/go_P.bmp",
+        "imageURL": require('../assets/G/go_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 2,
@@ -160,7 +160,7 @@ export default buttons = [
         "text": "Away",
         "partOfSpeech": "adverb",
         "type": "core",
-        "symbol": "/A/away2_P.bmp",
+        "imageURL": require('../assets/A/away2_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 3,
@@ -173,7 +173,7 @@ export default buttons = [
         "text": "Any",
         "partOfSpeech": "adverb",
         "type": "core",
-        "symbol": "/A/any_P.bmp",
+        "imageURL": require('../assets/A/any_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 4,
@@ -186,7 +186,7 @@ export default buttons = [
         "text": "Nothing",
         "partOfSpeech": "noun",
         "type": "core",
-        "symbol": "/N/nothing_P.bmp",
+        "imageURL": require('../assets/N/nothing_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 5,
@@ -199,7 +199,7 @@ export default buttons = [
         "text": "Hello",
         "partOfSpeech": "interjection",
         "type": "core",
-        "symbol": "/H/hello_P.bmp",
+        "imageURL": require('../assets/H/hello_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 1,
@@ -212,7 +212,7 @@ export default buttons = [
         "text": "Goodbye",
         "partOfSpeech": "interjection",
         "type": "core",
-        "symbol": "/G/goodbye_P.bmp",
+        "imageURL": require('../assets/G/goodbye_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 2,
@@ -225,7 +225,7 @@ export default buttons = [
         "text": "Little",
         "partOfSpeech": "adjective",
         "type": "core",
-        "symbol": "/L/little_P.bmp",
+        "imageURL": require('../assets/L/little_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 3,
@@ -238,7 +238,7 @@ export default buttons = [
         "text": "Big",
         "partOfSpeech": "adjective",
         "type": "core",
-        "symbol": "/B/big_P.bmp",
+        "imageURL": require('../assets/B/big_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 4,
@@ -251,7 +251,7 @@ export default buttons = [
         "text": "Wait",
         "partOfSpeech": "verb",
         "type": "core",
-        "symbol": "/W/wait_P.bmp",
+        "imageURL": require('../assets/W/wait_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 5,
@@ -264,7 +264,7 @@ export default buttons = [
         "text": "Over",
         "partOfSpeech": "preposition",
         "type": "core",
-        "symbol": "/O/over_P.bmp",
+        "imageURL": require('../assets/O/over_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 1,
@@ -277,7 +277,7 @@ export default buttons = [
         "text": "Under",
         "partOfSpeech": "preposition",
         "type": "core",
-        "symbol": "/U/under_P.bmp",
+        "imageURL": require('../assets/U/under_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 2,
@@ -290,7 +290,7 @@ export default buttons = [
         "text": "Left",
         "partOfSpeech": "adjective",
         "type": "core",
-        "symbol": "/L/left1_P.bmp",
+        "imageURL": require('../assets/L/left1_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 3,
@@ -303,7 +303,7 @@ export default buttons = [
         "text": "Right",
         "partOfSpeech": "adjective",
         "type": "core",
-        "symbol": "/R/right1a_P.bmp",
+        "imageURL": require('../assets/R/right1a_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 4,
@@ -316,7 +316,7 @@ export default buttons = [
         "text": "Leave",
         "partOfSpeech": "verb",
         "type": "core",
-        "symbol": "/L/leave_P.bmp",
+        "imageURL": require('../assets/L/leave_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 5,
@@ -329,7 +329,7 @@ export default buttons = [
         "text": "All",
         "partOfSpeech": "",
         "type": "action",
-        "symbol": "/A/all_P.bmp",
+        "imageURL": require('../assets/A/all_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 0,
@@ -343,7 +343,7 @@ export default buttons = [
         "text": "Food",
         "partOfSpeech": "",
         "type": "action",
-        "symbol": "/F/food_P.bmp",
+        "imageURL": require('../assets/F/food_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 0,
@@ -357,7 +357,7 @@ export default buttons = [
         "text": "Play",
         "partOfSpeech": "",
         "type": "action",
-        "symbol": "/P/play_P.bmp",
+        "imageURL": require('../assets/P/play_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 0,
@@ -371,7 +371,7 @@ export default buttons = [
         "text": "Emotion",
         "partOfSpeech": "",
         "type": "action",
-        "symbol": "/F/feel_P.bmp",
+        "imageURL": require('../assets/F/feel_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 0,
@@ -385,7 +385,7 @@ export default buttons = [
         "text": "Things",
         "partOfSpeech": "",
         "type": "action",
-        "symbol": "/T/thing_P.bmp",
+        "imageURL": require('../assets/T/thing_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 0,
@@ -399,7 +399,7 @@ export default buttons = [
         "text": "River",
         "partOfSpeech": "noun",
         "type": "fringe",
-        "symbol": "/R/river_P.bmp",
+        "imageURL": require('../assets/R/river_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 6,
@@ -413,7 +413,7 @@ export default buttons = [
         "text": "Fly",
         "partOfSpeech": "noun",
         "type": "fringe",
-        "symbol": "/F/fly1_P.bmp",
+        "imageURL": require('../assets/F/fly1_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 6,
@@ -427,7 +427,7 @@ export default buttons = [
         "text": "Doctor",
         "partOfSpeech": "noun",
         "type": "fringe",
-        "symbol": "/D/Dr1_P.bmp",
+        "imageURL": require('../assets/D/Dr1_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 6,
@@ -441,7 +441,7 @@ export default buttons = [
         "text": "Taco",
         "partOfSpeech": "noun",
         "type": "fringe",
-        "symbol": "/T/taco1_P.bmp",
+        "imageURL": require('../assets/T/taco1_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 6,
@@ -455,7 +455,7 @@ export default buttons = [
         "text": "Bicycle",
         "partOfSpeech": "noun",
         "type": "fringe",
-        "symbol": "/B/bike1_P.bmp",
+        "imageURL": require('../assets/B/bike1_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 6,
@@ -469,7 +469,7 @@ export default buttons = [
         "text": "Bus",
         "partOfSpeech": "noun",
         "type": "fringe",
-        "symbol": "/B/bus1a_P.bmp",
+        "imageURL": require('../assets/B/bus1a_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 7,
@@ -483,7 +483,7 @@ export default buttons = [
         "text": "Police",
         "partOfSpeech": "verb",
         "type": "fringe",
-        "symbol": "/P/policeman2b_P.bmp",
+        "imageURL": require('../assets/P/policeman2b_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 7,
@@ -497,7 +497,7 @@ export default buttons = [
         "text": "Trash",
         "partOfSpeech": "noun",
         "type": "fringe",
-        "symbol": "/T/trash can_P.bmp",
+        "imageURL": require('../assets/T/trash can_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 7,
@@ -511,7 +511,7 @@ export default buttons = [
         "text": "Cat",
         "partOfSpeech": "noun",
         "type": "fringe",
-        "symbol": "/C/cat1_P.bmp",
+        "imageURL": require('../assets/C/cat1_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 7,
@@ -525,7 +525,7 @@ export default buttons = [
         "text": "Dog",
         "partOfSpeech": "noun",
         "type": "fringe",
-        "symbol": "/D/dog1_P.bmp",
+        "imageURL": require('../assets/D/dog1_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 7,
