@@ -1,5 +1,21 @@
 import React, { Component } from 'react';
-import { Button, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Button, Dimensions, Image, StyleSheet, Text, TouchableOpacity, View, Platform, PixelRatio } from 'react-native';
+
+const { height: screenHeight, width: screenWidth } = Dimensions.get('window');
+
+
+// based on iphone 5s's scale
+const scale = screenWidth / 320;
+
+export function normalize(size) {
+  if (Platform.OS === 'ios') {
+    return Math.round(PixelRatio.roundToNearestPixel(size))
+  } else {
+    return Math.round(PixelRatio.roundToNearestPixel(size)) - 2
+  }
+}
+
+import ButtonTitle from './ButtonTitle';
 
 const images = {
   I: require('../assets/I/I1_P.bmp'),
@@ -42,10 +58,7 @@ export default class ButtonView extends Component {
         super(props);
 
         this.state = {
-            button: {
-                text: 'like',
-                image: 'like',
-            }
+            button: props.button
         };
     }
 
@@ -57,11 +70,16 @@ export default class ButtonView extends Component {
     }
 
     render() {
+        const { text } = this.state.button;
+
         return (
             <View style={styles.container}>
-                <TouchableOpacity title="" onPress={this.updateDisplayText} >
-                    <View>
+
+                <TouchableOpacity title="" onPress={this.updateDisplayText} style={styles.touchableOpacityContainer}>
+                    <View style={styles.textContainer}>
                         <ButtonTitle title={this.state.button.text}/>
+                    </View>
+                    <View style={styles.imageContainer}>
                         <ButtonImage path={this.state.button.image}/>
                     </View>
                 </TouchableOpacity>
@@ -69,13 +87,6 @@ export default class ButtonView extends Component {
         );
     }
 }
-
-const ButtonTitle = (props) => {
-    const titleText = props.title;
-    return (
-        <Text style={styles.text}>{`${titleText}`}</Text>
-    )
-};
 
 const ButtonImage = (props) => {
     return (
@@ -86,17 +97,35 @@ const ButtonImage = (props) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
-        borderRadius: 20,
-        borderWidth: 10,
-        borderColor: 'black',
+        borderWidth: 5, 
+        borderColor: 'red',
+        borderRadius: 50,
+        backgroundColor: 'pink',
+    },
+    touchableOpacityContainer: {
+        flex: 1,
     },
     text: {
         textAlign: 'center',
+        fontSize: normalize(30),
+    },
+    textContainer: {
+        flex: 2,
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        // borderWidth: 1,
+        // backgroundColor: 'orange',
     },
     image: {
+    },
+    imageContainer: {
+        flex: 8,
+        alignItems: 'center',
+        // borderWidth: 1,
+        // backgroundColor: 'red',
     }
 });
