@@ -29,6 +29,7 @@ export default class App extends Component {
         };
     }
 
+    // life cycle method - ensures component is mounted before turning screen
     componentDidMount() {
         Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.LANDSCAPE_RIGHT);
     }
@@ -68,7 +69,7 @@ export default class App extends Component {
         });
     }
 
-    // Edit Button
+    // Set edit button to visible
     launchEditButtonModal = (id) => {
         this.setState({
             ...this.state,
@@ -80,6 +81,7 @@ export default class App extends Component {
         });
     }
 
+    // Save changes to button
     saveEditButton = () => {
         const { buttonToEdit_id: id, buttons } = this.state;
         const index = buttons.findIndex(button => button.id === id);
@@ -109,6 +111,7 @@ export default class App extends Component {
         });
     }
 
+    // Discard changes to button
     cancelEditButton = () => {
         this.setState({
             ...this.state,
@@ -120,7 +123,7 @@ export default class App extends Component {
             buttonToEdit_imageURL: ''
         });
     }
-    
+
     render() {
         if (this.state.isEditButtonModalVisible) {
             const { buttonToEdit_id: id } = this.state;
@@ -197,6 +200,8 @@ export default class App extends Component {
     }
 }
 
+
+// CSS styling
 const styles = StyleSheet.create({
     modalContainer: {
         flex: 1,
