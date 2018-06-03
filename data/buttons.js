@@ -713,4 +713,130 @@ export default buttons = [
         },
         boards: ['0']
     },
+    {
+        id: '50',
+        text: 'Book',
+        partOfSpeech: 'noun',
+        type: 'fringe',
+        imageId: '50',
+        coordinates: {
+            '8_5': {
+                    x: 0,
+                    y: 10
+            }
+        },
+        boards: ['0']
+    },
+    // {
+    //     id: '51',
+    //     text: 'Jewelry',
+    //     partOfSpeech: 'noun',
+    //     type: 'fringe',
+    //     imageId: '51',
+    //     coordinates: {
+    //         '8_5': {
+    //             x: 1,
+    //             y: 10
+    //         }
+    //     },
+    //     boards: ['0']
+    // },
+    // {
+    //     id: '52',
+    //     text: 'Business Accessory',
+    //     partOfSpeech: 'noun',
+    //     type: 'fringe',
+    //     imageId: '52',
+    //     coordinates: {
+    //         '8_5': {
+    //             x: 2,
+    //             y: 10
+    //         }
+    //     },
+    //     boards: [0]
+    // },
+    {
+        id: '53',
+        text: 'Shoe',
+        partOfSpeech: 'noun',
+        type: 'fringe',
+        imageId: '53',
+        coordinates: {
+            '8_5': {
+                x: 3,
+                y: 10
+            }
+        },
+        boards: [0]
+    },
+    // {
+    //     id: '54',
+    //     text: 'Read',
+    //     partOfSpeech: 'adjective',
+    //     type: 'core',
+    //     imageId: '54',
+    //     coordinates: {
+    //         '8_5': {
+    //             x: 4,
+    //             y: 10
+    //         }
+    //     },
+    //     boards: [0]
+    // },
+    // {
+    //     id: '55',
+    //     text: 'Storage',
+    //     partOfSpeech: 'noun',
+    //     type: 'fringe',
+    //     imageId: '55',
+    //     coordinates: {
+    //         '8_5': {
+    //             x: 5,
+    //             y: 10
+    //         }
+    //     },
+    //     boards: [0]
+    // },
+    {
+        id: '57',
+        text: 'Electronics',
+        partOfSpeech: 'noun',
+        type: 'fringe',
+        imageId: '57',
+        coordinates: {
+            '8_5': {
+                x: 7,
+                y: 10
+            }
+        },
+        boards: [0]
+    },
+    // {
+    //     id: '58',
+    //     text: 'Device Assist',
+    //     partOfSpeech: 'noun',
+    //     type: 'fringe',
+    //     imageId: '58',
+    //     coordinates: {
+    //         '8_5': {
+    //             x: 8,
+    //             y: 10
+    //         }
+    //     },
+    //     boards: [0]
+    // },
+    {
+        id: '59',
+        text: 'Draw',
+        partOfSpeech: 'noun',
+        type: 'fringe',
+        imageId: '59',
+        coordinates: {
+            '8_5': {
+                x: 9,
+                y: 10
+            }
+        },
+        boards: [0]
+    }
 ];

@@ -13,28 +13,26 @@ Right to Speak is our solution to this desparate need. This open-source Alternat
 ## How to use Right to Speak:
 
 Open the application on the device.
-![Starting image](assets/README/readme1_4.png)
+![Starting image](assets/README/readme01.png)
 
 Tap a button to send text to the output bar.
-![Single word](assets/README/readme2.png)
+![Single word](assets/README/readme02.png)
 
 Multiple button taps sends multiple text to the output bar.
-![Multiple words](assets/README/readme3.png)
+![Multiple words](assets/README/readme03.png)
 
 Clear the output bar by tapping on the "X". Long press on a button to open edit mode.
-![Clear output](assets/README/readme1_4.png)
+![Clear output](assets/README/readme01.png)
 
 Long press on the toggle on the bottom right to display the keyboard.
-![Toggle keyboard](assets/README/readme5.png)
+![Toggle keyboard](assets/README/readme04.png)
 
 Tap desired letters. When finished, tap keyboard toggle on bottom right to hide keyboard.
-![Enter new word](assets/README/readme6.png)
-
 Tap "Save" to save and close edit mode or tap "Cancel" to exit without saving.
-![Save word](assets/README/readme7.png)
+![Enter new word](assets/README/readme05.png)
 
 The new word is displayed on the button.
-![Word changed](assets/README/readme8.png)
+![Word changed](assets/README/readme06.png)
 
 ## Technologies used:
 

@@ -305,5 +305,58 @@ export default images = [
         keywords: ['man', 'family', 'dad', 'relatives'],
         categories: ['people']
     },
-
+    {
+        id: '50',
+        imageURL: require('../assets/A/about_P.bmp'),
+        keywords: ['book', 'read'],
+        categories: ['things']
+    },
+    // {
+    //     id: '51',
+    //     imageURL: require('../assets/A/accessory1_P.bmp'),
+    //     keywords: ['jewelry'],
+    //     categories: ['things']
+    // },
+    // {
+    //     id: '52',
+    //     imageURL: require('../assets/A/accessory2_P.bmp'),
+    //     keywords: ['jewelry', 'suit', 'business'],
+    //     categories: ['things']
+    // },
+    {
+        id: '53',
+        imageURL: require('../assets/A/across_P.bmp'),
+        keywords: ['shoelace', 'shoe'],
+        categories: ['things']
+    },
+    // {
+    //     id: '54',
+    //     imageURL: require('../assets/A/activity book_P.bmp'),
+    //     keywords: ['book', 'read'],
+    //     categories: ['things']
+    // },
+    // {
+    //     id: '55',
+    //     imageURL: require('../assets/A/activity center_P.bmp'),
+    //     keywords: ['storage', 'bins', 'activity'],
+    //     categories: ['things']
+    // },
+    {
+        id: '57',
+        imageURL: require('../assets/A/adapter1_P.bmp'),
+        keywords: ['outlet', 'plug', 'charge'],
+        categories: ['things']
+    },
+    // {
+    //     id: '58',
+    //     imageURL: require('../assets/A/adapter2_P.bmp'),
+    //     keywords: ['device assist', 'mobile assist'],
+    //     categories: ['things']
+    // },
+    {
+        id: '59',
+        imageURL: require('../assets/A/adjective_P.bmp'),
+        keywords: ['paint', 'brush'],
+        categories: ['things']
+    }
 ];
