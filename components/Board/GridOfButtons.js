@@ -74,6 +74,7 @@ const layout = (buttons, state, props) => {
     });
 };
 
+// scrollable grid with buttons
 export default class GridOfButtons extends Component {
     render() {
         const { buttons } = this.props;

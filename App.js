@@ -34,10 +34,12 @@ export default class App extends Component {
         };
     }
 
+    // Life Cycle Method - Ensures component is mounted before turning screen
     componentDidMount() {
         Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.LANDSCAPE_RIGHT);
     }
 
+    // Life Cycle Method - Ensures component will unmount before changing orientation back to portrait
     componentWillUnmount() {
         Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.PORTRAIT);
     }
@@ -73,7 +75,7 @@ export default class App extends Component {
         });
     }
 
-    // Edit Button
+    // Set edit button to visible
     launchEditButtonModal = (id) => {
         this.setState({
             ...this.state,
@@ -117,6 +119,7 @@ export default class App extends Component {
         });
     }
 
+    // Save changes to button
     saveEditButton = () => {
         const { buttonToEdit_id: id, buttons } = this.state;
         const index = buttons.findIndex(button => button.id === id);
@@ -148,6 +151,7 @@ export default class App extends Component {
         });
     }
 
+    // Discard changes to button
     cancelEditButton = () => {
         this.setState({
             ...this.state,
@@ -316,6 +320,8 @@ export default class App extends Component {
     }
 }
 
+
+// CSS styling
 const styles = StyleSheet.create({
     modalContainer: {
         // flex: 1,
@@ -325,6 +331,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#00000000',
         marginTop: 16
     },
+
     innerModal: {
         height: screenHeight * 0.5,
         width: screenWidth * 0.7,

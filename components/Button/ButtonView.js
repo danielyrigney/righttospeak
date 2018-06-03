@@ -19,6 +19,7 @@ export default class ButtonView extends Component {
         };
     }
 
+    // speech synthesis audio when button is tapped
     speakText = () => {
         const start = () => {
             this.setState({ inProgress: true });
@@ -38,6 +39,7 @@ export default class ButtonView extends Component {
         });
     };
 
+    // button text displayed in output bar when button is tapped
     onPressOnView = () => {
         const { text, type } = this.state.button;
 
@@ -53,6 +55,7 @@ export default class ButtonView extends Component {
         }
     }
 
+    // edit mode opened when button is long pressed
     onPressOnEdit = () => {
         const { id } = this.state.button;
 
