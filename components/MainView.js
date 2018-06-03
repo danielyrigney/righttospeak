@@ -11,6 +11,7 @@ export default class MainView extends Component {
             <View style={styles.container}>
                 <OutputBar
                     displayText={this.props.displayText}
+                    displaySymbols={this.props.displaySymbols}
                     clearDisplayText={this.props.clearDisplayText}
                 />
 

@@ -15,5 +15,6 @@ const styles = StyleSheet.create({
         width: 128,
         height: 128,
         resizeMode: Image.resizeMode.contain,
+        overflow: 'visible'
     }
 });

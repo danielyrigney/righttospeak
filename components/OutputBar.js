@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 import { Dimensions, Platform, PixelRatio, StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 import normalize from '../utils/normalize';
+import Output from './Output';
 
 // Acquire dimensions from the current screen used
 const { height: screenHeight, width: screenWidth } = Dimensions.get('window');
 
 export default class OutputBar extends Component {
     render() {
+        const displaySymbols = this.props.displaySymbols;
+
         return (
             <View style={styles.outputBarContainer}>
+
+                {/* Text Display from pressed button */}
                 <View style={styles.displayTextContainer}>
-                    <Text numberOfLines={1} ellipsizeMode="head" style={styles.displayText}>{this.props.displayText}</Text>
+                  {displaySymbols.map(symbol => <Output displayText={symbol.displayText} displayImage={symbol.imageURL}/>)}
                 </View>
 
                 {/* Button to clear the display text */}
@@ -31,7 +36,7 @@ const styles = StyleSheet.create({
             ios: {
                 backgroundColor: '#f5f5f5',
                 top: 5,
-                height: screenHeight * 0.1
+                height: screenHeight * 0.3
             },
             android: {
                 backgroundColor: '#f5f5f5',
@@ -51,7 +56,8 @@ const styles = StyleSheet.create({
         flexGrow: 9,
         maxWidth: 0.9 * screenWidth,
         paddingLeft: 16,
-        paddingRight: 16
+        paddingRight: 16,
+        height: 400
     },
     // Display text formatting
     displayText: {

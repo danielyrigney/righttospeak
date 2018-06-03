@@ -19,8 +19,7 @@ export default class App extends Component {
 
         this.state = {
             // View mode
-            displayText: '',
-            displayWords: [],
+            displaySymbols: [],
             buttons: buttons,
 
             // Edit mode
@@ -49,29 +48,28 @@ export default class App extends Component {
         this.setState({
             ...this.state,
 
-            displayText: '',
-            displayWords: []
+            displaySymbols: []
         });
     }
 
-    updateDisplayText = (text) => {
+    updateDisplayText = (text, url) => {
         // Make a copy of array
-        let displayWords = this.state.displayWords.slice();
+        let newObject = {displayText: text, imageURL: url};
+        let displaySymbols = this.state.displaySymbols.slice();
 
-        if (displayWords.length < MAX_DISPLAY_WORDS) {
-            displayWords.push(text);
+        if (displaySymbols.length < MAX_DISPLAY_WORDS) {
+            displaySymbols.push(newObject);
 
         } else {
-            displayWords.shift();
-            displayWords.push(text);
+            displaySymbols.shift();
+            displaySymbols.push(newObject);
 
         }
 
         this.setState({
             ...this.state,
 
-            displayText: `${displayWords.join(' ')}`,
-            displayWords
+            displaySymbols
         });
     }
 
@@ -309,6 +307,7 @@ export default class App extends Component {
                         filterButtonsByCategory={this.filterButtonsByCategory}
 
                         displayText={this.state.displayText}
+                        displaySymbols={this.state.displaySymbols}
                         isEditButtonModalVisible={this.state.isEditButtonModalVisible}
 
                         buttons={this.state.buttons}

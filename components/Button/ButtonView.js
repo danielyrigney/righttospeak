@@ -41,15 +41,16 @@ export default class ButtonView extends Component {
 
     // button text displayed in output bar when button is tapped
     onPressOnView = () => {
-        const { text, type } = this.state.button;
-
+        const { text, type, imageId } = this.state.button;
+        const imageURL = images.find(image => image.id === imageId).imageURL;
+        
         if (type === 'action') {
             const category = text.toLowerCase();
 
             this.props.filterButtonsByCategory(category);
 
         } else {
-            this.props.updateDisplayText(text);
+            this.props.updateDisplayText(text, imageURL);
             this.speakText();
 
         }
