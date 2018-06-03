@@ -26,7 +26,7 @@ export default class ButtonView extends Component {
             this.state.inProgress && this.setState({ inProgress: false });
         };
 
-        Speech.speak(this.state.button.text, {
+        Speech.speak(this.state.button.text.toLowerCase(), {
             language: this.state.language,
             pitch: this.state.pitch,
             rate: this.state.rate,

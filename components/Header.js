@@ -19,7 +19,7 @@ export default class HeaderBar extends Component {
         return (
             <View style={styles.headerContainer}>
                 <View style={styles.displayTextContainer}>
-                    <Text numberOfLines={1} ellipsizeMode="clip" style={styles.displayText}>{this.props.displayText}</Text>
+                    <Text numberOfLines={1} ellipsizeMode="head" style={styles.displayText}>{this.props.displayText}</Text>
                 </View>
 
                 <View style={styles.clearButtonContainer}>
@@ -56,7 +56,9 @@ const styles = StyleSheet.create({
 
     displayTextContainer: {
         flexGrow: 9,
-        maxWidth: 0.8 * screenWidth
+        maxWidth: 0.8 * screenWidth,
+        paddingLeft: 16,
+        paddingRight: 16
     },
     displayText: {
         color: '#000',

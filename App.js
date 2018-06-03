@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { StatusBar, View, Modal, TouchableHighlight, Text, TextInput } from 'react-native';
+import { StatusBar, StyleSheet, View, Modal, TouchableHighlight, Text, TextInput } from 'react-native';
 import Expo from 'expo';
 
 import MainView from './components/MainView';
+import ButtonImage from './components/Button/ButtonImage';
 import buttons from './data/buttons';
+
+const MAX_DISPLAY_WORDS = 16;
 
 export default class App extends Component {
     constructor(props) {
@@ -12,12 +15,14 @@ export default class App extends Component {
         this.state = {
             // View mode
             displayText: '',
+            displayWords: [],
             buttons: buttons,
 
             // Edit mode
             isEditButtonModalVisible: false,
             buttonToEdit_id: undefined,
-            buttonToEdit_text: ''
+            buttonToEdit_text: '',
+            buttonToEdit_imageURL: ''
         };
     }
 
@@ -34,15 +39,29 @@ export default class App extends Component {
         this.setState({
             ...this.state,
 
-            displayText: ''
+            displayText: '',
+            displayWords: []
         });
     }
 
     updateDisplayText = (text) => {
+        // Make a copy of array
+        let displayWords = this.state.displayWords.slice();
+
+        if (displayWords.length < MAX_DISPLAY_WORDS) {
+            displayWords.push(text);
+
+        } else {
+            displayWords.shift();
+            displayWords.push(text);
+
+        }
+
         this.setState({
             ...this.state,
 
-            displayText: `${this.state.displayText} ${text}`
+            displayText: `${displayWords.join(' ')}`,
+            displayWords
         });
     }
 
@@ -53,7 +72,8 @@ export default class App extends Component {
 
             isEditButtonModalVisible: true,
             buttonToEdit_id: id,
-            buttonToEdit_text: this.state.buttons[id].text
+            buttonToEdit_text: this.state.buttons[id].text,
+            buttonToEdit_imageURL: this.state.buttons[id].imageURL,
         });
     }
 
@@ -81,7 +101,8 @@ export default class App extends Component {
             // Reset
             isEditButtonModalVisible: false,
             buttonToEdit_id: undefined,
-            buttonToEdit_text: ''
+            buttonToEdit_text: '',
+            buttonToEdit_imageURL: ''
         });
     }
 
@@ -92,7 +113,8 @@ export default class App extends Component {
             // Reset
             isEditButtonModalVisible: false,
             buttonToEdit_id: undefined,
-            buttonToEdit_text: ''
+            buttonToEdit_text: '',
+            buttonToEdit_imageURL: ''
         });
     }
     
@@ -109,16 +131,27 @@ export default class App extends Component {
                 >
                     <View style={{marginTop: 22}}>
                         <View>
-                            <TextInput
-                                placeholder="Please enter a text for this button."
-                                value={this.state.buttonToEdit_text}
-                                onChangeText={(newName) => {
-                                    this.setState({
-                                        ...this.state,
-                                        buttonToEdit_text: newName
-                                    });
-                                }}
-                            />
+                            <View style={styles.formItemContainer}>
+                                <Text style={styles.label}>Button Text:</Text>
+                                <TextInput
+                                    autoFocus={true}
+                                    placeholder="Please enter a text for this button."
+                                    value={this.state.buttonToEdit_text}
+                                    onChangeText={(newName) => {
+                                        this.setState({
+                                            ...this.state,
+                                            buttonToEdit_text: newName
+                                        });
+                                    }}
+                                />
+                            </View>
+
+                            <View style={styles.formItemContainer}>
+                                <Text style={styles.label}>Select Image:</Text>
+                                <View style={styles.imageContainer}>
+                                    <ButtonImage path={this.state.buttonToEdit_imageURL}/>
+                                </View>
+                            </View>
 
                             <TouchableHighlight onPress={this.cancelEditButton}>
                                 <Text>Cancel</Text>
@@ -153,3 +186,24 @@ export default class App extends Component {
         }
     }
 }
+
+const styles = StyleSheet.create({
+    label: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        marginBottom: 8
+    },
+    formItemContainer: {
+        marginBottom: 16
+    },
+    imageContainer: {
+        paddingBottom: 8,
+        alignItems: 'center'
+    },
+    cancelEditButton: {
+
+    },
+    saveEditButton: {
+
+    }
+});
