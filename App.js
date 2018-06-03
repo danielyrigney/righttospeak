@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import { StatusBar, StyleSheet, View, Modal, TouchableHighlight, Text, TextInput } from 'react-native';
+import { StatusBar, StyleSheet, View, Modal, TouchableHighlight, Text, TextInput, Dimensions } from 'react-native';
 import Expo from 'expo';
+
+const { height: screenHeight, width: screenWidth } = Dimensions.get('window');
 
 import MainView from './components/MainView';
 import ButtonImage from './components/Button/ButtonImage';
 import buttons from './data/buttons';
+import normalize from './utils/normalize';
 
 const MAX_DISPLAY_WORDS = 16;
 
@@ -129,37 +132,44 @@ export default class App extends Component {
                     transparent={false}
                     visible={this.state.isEditButtonModalVisible}
                 >
-                    <View style={{marginTop: 22}}>
-                        <View>
-                            <View style={styles.formItemContainer}>
-                                <Text style={styles.label}>Button Text:</Text>
-                                <TextInput
-                                    autoFocus={true}
-                                    placeholder="Please enter a text for this button."
-                                    value={this.state.buttonToEdit_text}
-                                    onChangeText={(newName) => {
-                                        this.setState({
-                                            ...this.state,
-                                            buttonToEdit_text: newName
-                                        });
-                                    }}
-                                />
-                            </View>
+                    <View style={styles.modalContainer}>
+                        <View style={styles.innerModal}>
+                            <StatusBar hidden={true} />
+                            <Text style={styles.modalTitle}>Edit Button Details</Text>
+                            <View style={styles.outerFormContainer}>
+                                <View style={styles.formItemContainer}>
+                                    <Text style={styles.label}>Button Text:</Text>
+                                    <TextInput
+                                        style={styles.textInput}
+                                        autoFocus={true}
+                                        placeholder="Please enter a text for this button."
+                                        value={this.state.buttonToEdit_text}
+                                        onChangeText={(newName) => {
+                                            this.setState({
+                                                ...this.state,
+                                                buttonToEdit_text: newName
+                                            });
+                                        }}
+                                    />
+                                </View>
 
-                            <View style={styles.formItemContainer}>
-                                <Text style={styles.label}>Select Image:</Text>
-                                <View style={styles.imageContainer}>
-                                    <ButtonImage path={this.state.buttonToEdit_imageURL}/>
+                                <View style={styles.formItemContainer}>
+                                    <Text style={styles.label}>Select Image:</Text>
+                                    <View style={styles.imageContainer}>
+                                        <ButtonImage path={this.state.buttonToEdit_imageURL}/>
+                                    </View>
+                                </View>
+
+                                <View style={styles.formCancelButtons}>
+                                    <TouchableHighlight onPress={this.cancelEditButton} style={[styles.modalButton, styles.cancelEditButton]}>
+                                        <Text style={styles.modalButtonText}>Cancel</Text>
+                                    </TouchableHighlight>
+
+                                    <TouchableHighlight onPress={this.saveEditButton} style={[styles.modalButton, styles.saveEditButton]}>
+                                        <Text style={styles.modalButtonText}>Save</Text>
+                                    </TouchableHighlight>
                                 </View>
                             </View>
-
-                            <TouchableHighlight onPress={this.cancelEditButton}>
-                                <Text>Cancel</Text>
-                            </TouchableHighlight>
-
-                            <TouchableHighlight onPress={this.saveEditButton}>
-                                <Text>Save</Text>
-                            </TouchableHighlight>
                         </View>
                     </View>
                 </Modal>
@@ -188,10 +198,35 @@ export default class App extends Component {
 }
 
 const styles = StyleSheet.create({
+    modalContainer: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    innerModal: {
+        height: screenHeight * 0.6,
+        width: screenWidth * 0.7,
+        backgroundColor: 'yellow',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    modalTitle: {
+        fontSize: normalize(40),
+        marginBottom: 12
+    },
     label: {
-        fontSize: 16,
+        fontSize: normalize(20),
         fontWeight: 'bold',
         marginBottom: 8
+    },
+    textInput: {
+        fontSize: normalize(20),
+        width: screenHeight * 0.2,
+        width: screenWidth * 0.36,
+    },
+    outerFormContainer: {
+        alignItems: 'flex-start',
     },
     formItemContainer: {
         marginBottom: 16
@@ -200,10 +235,23 @@ const styles = StyleSheet.create({
         paddingBottom: 8,
         alignItems: 'center'
     },
+    formCancelButtons: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    modalButton: {
+        height: screenHeight * 0.08,
+        width: screenWidth * 0.18,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
     cancelEditButton: {
-
+        backgroundColor: 'red'
     },
     saveEditButton: {
-
+        backgroundColor: 'green'
+    },
+    modalButtonText: {
+        fontSize: normalize(20)
     }
 });
