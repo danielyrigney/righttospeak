@@ -549,7 +549,7 @@ export default buttons = [
         id: '38',
         text: 'Cat',
         partOfSpeech: 'noun',
-        type: 'fringe',
+        type: 'core',
         imageId: '38',
         coordinates: {
             '8_5': {
@@ -563,12 +563,152 @@ export default buttons = [
         id: '39',
         text: 'Dog',
         partOfSpeech: 'noun',
-        type: 'fringe',
+        type: 'core',
         imageId: '39',
         coordinates: {
             '8_5': {
                 x: 4,
                 y: 7
+            }
+        },
+        boards: ['0']
+    },
+    {
+        id: '40',
+        text: 'Adult',
+        partOfSpeech: 'noun',
+        type: 'core',
+        imageId: '40',
+        coordinates: {
+            '8_5': {
+                x: 0,
+                y: 8
+            }
+        },
+        boards: ['0']
+    },
+    {
+        id: '41',
+        text: 'Actor',
+        partOfSpeech: 'noun',
+        type: 'fringe',
+        imageId: '41',
+        coordinates: {
+            '8_5': {
+                x: 1,
+                y: 8
+            }
+        },
+        boards: ['0']
+    },
+    {
+        id: '42',
+        text: 'Aunt',
+        partOfSpeech: 'noun',
+        type: 'core',
+        imageId: '42',
+        coordinates: {
+            '8_5': {
+                x: 2,
+                y: 8
+            }
+        },
+        boards: ['0']
+    },
+    {
+        id: '43',
+        text: 'Angel',
+        partOfSpeech: 'noun',
+        type: 'fringe',
+        imageId: '43',
+        coordinates: {
+            '8_5': {
+                x: 3,
+                y: 8
+            }
+        },
+        boards: ['0']
+    },
+    {
+        id: '44',
+        text: 'Baby',
+        partOfSpeech: 'noun',
+        type: 'fringe',
+        imageId: '44',
+        coordinates: {
+            '8_5': {
+                x: 4,
+                y: 8
+            }
+        },
+        boards: ['0']
+    },
+    {
+        id: '45',
+        text: 'Boy',
+        partOfSpeech: 'noun',
+        type: 'core',
+        imageId: '45',
+        coordinates: {
+            '8_5': {
+                x: 0,
+                y: 9
+            }
+        },
+        boards: ['0']
+    },
+    {
+        id: '46',
+        text: 'Cashier',
+        partOfSpeech: 'noun',
+        type: 'fringe',
+        imageId: '46',
+        coordinates: {
+            '8_5': {
+                x: 1,
+                y: 9
+            }
+        },
+        boards: ['0']
+    },
+    {
+        id: '47',
+        text: 'Chef',
+        partOfSpeech: 'noun',
+        type: 'fringe',
+        imageId: '47',
+        coordinates: {
+            '8_5': {
+                x: 2,
+                y: 9
+            }
+        },
+        boards: ['0']
+    },
+    {
+        id: '48',
+        text: 'Mom',
+        partOfSpeech: 'noun',
+        type: 'core',
+        imageId: '48',
+        coordinates: {
+            '8_5': {
+                x: 3,
+                y: 9
+            }
+        },
+        boards: ['0']
+    },
+    {
+        id: '49',
+        text: 'Father',
+        partOfSpeech: 'noun',
+        type: 'core',
+        imageId: '49',
+        coordinates: {
+            '8_5': {
+                x: 4,
+                y: 9
             }
         },
         boards: ['0']

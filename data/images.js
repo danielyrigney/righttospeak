@@ -244,5 +244,66 @@ export default images = [
         imageURL: require('../assets/D/dog1_P.bmp'),
         keywords: ['animal', 'fur', 'puppy', 'dog'],
         categories: ['things']
-    }
+    },
+    {
+        id: '40',
+        imageURL: require('../assets/A/adult1_P.bmp'),
+        keywords: ['people', 'person', 'hat', 'raise', 'hand'],
+        categories: ['people']
+    },
+    {
+        id: '41',
+        imageURL: require('../assets/A/actor1_P.bmp'),
+        keywords: ['people', 'person', 'tv', 'movies', 'films'],
+        categories: ['people']
+    },
+    {
+        id: '42',
+        imageURL: require('../assets/A/aunt1_P.bmp'),
+        keywords: ['relative', 'woman', 'sister', 'lady'],
+        categories: ['people']
+    },
+    {
+        id: '43',
+        imageURL: require('../assets/A/angelhairpasta1_P.bmp'),
+        keywords: ['person', 'god', 'religion', 'halo'],
+        categories: ['people']
+    },
+    {
+        id: '44',
+        imageURL: require('../assets/B/baby1_P.bmp'),
+        keywords: ['toddler', 'young', 'child', 'newborn', 'small', 'little'],
+        categories: ['people']
+    },
+    {
+        id: '45',
+        imageURL: require('../assets/B/boy1_P.bmp'),
+        keywords: ['man', 'young'],
+        categories: ['people']
+    },
+    {
+        id: '46',
+        imageURL: require('../assets/C/cashier1_P.bmp'),
+        keywords: ['store', 'register', 'shopping', 'checkout'],
+        categories: ['people']
+    },
+    {
+        id: '47',
+        imageURL: require('../assets/C/chef1_P.bmp'),
+        keywords: ['cook', 'culinary', 'food', 'cooking'],
+        categories: ['people']
+    },
+    {
+        id: '48',
+        imageURL: require('../assets/M/mother2_P.bmp'),
+        keywords: ['mom', 'family', 'woman', 'relatives'],
+        categories: ['people']
+    },
+    {
+        id: '49',
+        imageURL: require('../assets/F/father1_P.bmp'),
+        keywords: ['man', 'family', 'dad', 'relatives'],
+        categories: ['people']
+    },
+
 ];
