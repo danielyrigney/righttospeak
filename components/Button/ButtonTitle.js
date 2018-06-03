@@ -1,18 +1,7 @@
 import React, { Component } from 'react';
 import { Dimensions, Platform, PixelRatio, StyleSheet, Text } from 'react-native';
 
-const { height: screenHeight, width: screenWidth } = Dimensions.get('window');
-
-// based on iPhone 5s's scale
-const scale = screenWidth / 320;
-
-const normalize = (size) => {
-    if (Platform.OS === 'ios') {
-        return Math.round(PixelRatio.roundToNearestPixel(size))
-    } else {
-        return Math.round(PixelRatio.roundToNearestPixel(size)) - 2
-    }
-}
+import normalize from './../../tools/normalize';
 
 export default class ButtonTitle extends Component {
     render() {
