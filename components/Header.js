@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, Dimensions, TouchableHighlight } from 'react-native';
+import { Dimensions, Platform, PixelRatio, StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
 const { height: screenHeight, width: screenWidth } = Dimensions.get('window');
+
+// based on iPhone 5s's scale
+const scale = screenWidth / 320;
+
+const normalize = (size) => {
+    if (Platform.OS === 'ios') {
+        return Math.round(PixelRatio.roundToNearestPixel(size))
+    } else {
+        return Math.round(PixelRatio.roundToNearestPixel(size)) - 2
+    }
+}
 
 export default class HeaderBar extends Component {
     render() {
         return (
             <View style={styles.headerContainer}>
                 <View style={styles.displayTextContainer}>
-                    <Text style={styles.displayText}>{this.props.displayText}</Text>
+                    <Text numberOfLines={1} ellipsizeMode="clip" style={styles.displayText}>{this.props.displayText}</Text>
                 </View>
 
                 <View style={styles.clearButtonContainer}>
-                    <TouchableHighlight style={styles.clearButtonTouchable} onPress={this.props.clearDisplayText}>
-                        <Text style={styles.clearButtonText}>X</Text>
+                    <TouchableHighlight accessible={true} accessibilityLabel={'Clear'} style={styles.clearButtonTouchable} onPress={this.props.clearDisplayText}>
+                        <Text style={styles.clearButtonText}>&times;</Text>
                     </TouchableHighlight>
                 </View>
             </View>
@@ -38,8 +49,8 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         borderColor: 'black',
-        borderTopWidth: 2,
-        borderBottomWidth: 2
+        borderTopWidth: 4,
+        borderBottomWidth: 4
     },
 
 
@@ -50,22 +61,19 @@ const styles = StyleSheet.create({
     displayText: {
         color: '#000',
         fontWeight: 'bold',
-        fontSize: 24,
+        fontSize: normalize(72),
     },
 
     clearButtonContainer: {
-        flexGrow: 1,
         backgroundColor: '#232323',
+        flexGrow: 1,
         flexDirection: 'column',
-        justifyContent: 'space-evenly',
     },
     clearButtonTouchable: {
         alignItems: 'center',
-        padding: 10,
-        paddingVertical: 30
     },
     clearButtonText: {
         color: "#eee",
-        fontSize: 24,
+        fontSize: normalize(80),
     }
 });

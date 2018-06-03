@@ -56,12 +56,11 @@ export default class ButtonView extends Component {
         return (
             <View style={[styles.container, { borderColor: Constants.colorScheme[this.state.button.partOfSpeech] }]}>
                 <TouchableOpacity title="" onPress={this.onPressOnView} onLongPress={this.onPressOnEdit} style={styles.touchableOpacityContainer}>
-                    <View style={styles.imageContainer}>
-                        <ButtonImage path={this.state.button.imageURL}/>
-                    </View>
-
                     <View style={styles.textContainer}>
                         <ButtonTitle title={text}/>
+                    </View>
+                    <View style={styles.imageContainer}>
+                        <ButtonImage path={this.state.button.imageURL}/>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -76,22 +75,22 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
-        borderWidth: 5,
+        borderWidth: 8,
         borderColor: 'red',
-        borderRadius: 50,
+        borderRadius: 30,
         backgroundColor: 'transparent',
     },
     touchableOpacityContainer: {
         flex: 1,
     },
-    imageContainer: {
-        flex: 8,
-        alignItems: 'center'
-    },
     textContainer: {
-        flex: 2,
+        paddingTop: 16,
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%'
+    },
+    imageContainer: {
+        paddingBottom: 8,
+        alignItems: 'center'
     }
 });

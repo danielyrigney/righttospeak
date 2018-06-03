@@ -11,8 +11,8 @@ export default class ButtonImage extends Component {
 
 const styles = StyleSheet.create({
     image: {
-        width: 250,
-        height: 250,
+        width: 128,
+        height: 128,
         resizeMode: Image.resizeMode.contain,
     }
 });

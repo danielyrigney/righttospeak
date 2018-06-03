@@ -27,7 +27,6 @@ export default class MainView extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: statusBarHeight,
         height: '100%',
     }
 });

@@ -14,7 +14,7 @@ setBreakPoints({
 });
 */
 
-const sizes = { sm: 25, md: 25, lg: 25, xl: 25 };
+const sizes = { sm: 20, md: 20, lg: 20, xl: 20 };
 
 let elements = {};
 
@@ -38,37 +38,18 @@ const Board = (props) => {
             smSize={sizes.sm}
             mdSize={sizes.md}
             lgSize={sizes.lg}
-            xlSize={sizes.xl} 
+            xlSize={sizes.xl}
             style={{backgroundColor: 'white'}}
         >
-            <Row
-                smSizePoints={props.state.layout.grid ? props.state.layout.grid.height / 2 : 0}
-                mdSizePoints={props.state.layout.grid ? props.state.layout.grid.width / 2 : 0}
-                lgSizePoints={props.state.layout.grid ? props.state.layout.grid.width / 3 : 0}
-                xlSizePoints={props.state.layout.grid ? props.state.layout.grid.width / 4 : 0}
-                alignLines="stretch"
-            >
-                <Column fullWidth>
-                    <Row rtl>
-                        <Column fullWidth offsetPoints={10}>
-                            <TouchableOpacity onPress={() => {}}>
-                                <Text style={{fontSize: 22, marginTop: 15}}>
-
-                                    <ButtonView
-                                        button={button}
-                                        updateDisplayText={properties.updateDisplayText}
-                                        launchEditButtonModal={properties.launchEditButtonModal}
-                                    />
-
-                                </Text>
-                            </TouchableOpacity>
-                        </Column>
-                    </Row>
-                </Column>
-                <Column fullWidth hAlign='center'>
-                    <Text style={{fontSize: 48, marginTop: 5}}>
-                        {props.id}
-                    </Text>
+            <Row alignLines="stretch" rtl>
+                <Column fullWidth offsetPoints={10}>
+                    <TouchableOpacity>
+                        <ButtonView
+                            button={button}
+                            updateDisplayText={properties.updateDisplayText}
+                            launchEditButtonModal={properties.launchEditButtonModal}
+                        />
+                    </TouchableOpacity>
                 </Column>
             </Row>
         </Column>
