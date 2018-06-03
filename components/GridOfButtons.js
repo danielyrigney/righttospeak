@@ -38,34 +38,17 @@ const Board = (props) => {
       smSize={sizes.sm}
       mdSize={sizes.md}
       lgSize={sizes.lg}
-      xlSize={sizes.xl} 
+      xlSize={sizes.xl}
       style={{backgroundColor: 'white'}}
     >
-      <Row 
-          smSizePoints={props.state.layout.grid ? props.state.layout.grid.height / 2 : 0} 
-          mdSizePoints={props.state.layout.grid ? props.state.layout.grid.width / 2 : 0} 
-          lgSizePoints={props.state.layout.grid ? props.state.layout.grid.width / 3 : 0} 
-          xlSizePoints={props.state.layout.grid ? props.state.layout.grid.width / 4 : 0}
-          alignLines="stretch"
-      >
-       <Col fullWidth> 
-         <Row rtl>
-           <Col fullWidth offsetPoints={10}>
-             <TouchableOpacity onPress={() => {}}>
-               <Text style={{fontSize: 22, marginTop: 15}}>
-                 <ButtonView
-                  button={button}
-                  updateDisplayText={props.updateDisplayText}
-                />
-               </Text>
-             </TouchableOpacity>
-           </Col>
-         </Row>
-       </Col>
-       <Col fullWidth hAlign='center'> 
-         <Text style={{fontSize: 48, marginTop: 5}}>
-           {props.id}
-         </Text>
+      <Row alignLines="stretch" rtl>
+       <Col fullWidth offsetPoints={10}>
+         <TouchableOpacity onPress={() => {}}>
+         <ButtonView
+          button={button}
+          updateDisplayText={props.updateDisplayText}
+        />
+         </TouchableOpacity>
        </Col>
       </Row>
     </Col>
@@ -74,7 +57,7 @@ const Board = (props) => {
 
 const layout = (buttons, state, updateDisplayText) => {
   return buttons.map(button => {
-    return ([<Board 
+    return ([<Board
         button={button}
         state={state}
         updateDisplayText={updateDisplayText}
@@ -100,7 +83,7 @@ export default class GridOfButtons extends Component {
       <Grid>{
         ({ state, setState }) => {
           return (
-            <Col fullHeight style={{backgroundColor: 'lightgray'}}> 
+            <Col fullHeight style={{backgroundColor: 'lightgray'}}>
               <ScrollView removeClippedSubviews={true} >
                 <TouchableOpacity activeOpacity={1} onPress={(e) => showAll(e)}>
                   <Row>{

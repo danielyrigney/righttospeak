@@ -14,8 +14,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     image: {
-        width: 250,
-        height: 250,
+        width: 125,
+        height: 125,
         resizeMode: Image.resizeMode.contain,
     }
 });
