@@ -26,6 +26,6 @@ export default class ButtonTitle extends Component {
 const styles = StyleSheet.create({
     text: {
         textAlign: 'center',
-        fontSize: normalize(30),
+        fontSize: normalize(50),
     },
 });

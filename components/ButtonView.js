@@ -46,13 +46,12 @@ export default class ButtonView extends Component {
 
         return (
             <View style={[styles.container, {borderColor: Constants.colorScheme[this.state.button.partOfSpeech]}]}>
-
                 <TouchableOpacity title="" onPress={() => {this.updateDisplayText(); this.speakText()}} style={styles.touchableOpacityContainer}>
-                    <View style={styles.textContainer}>
-                        <ButtonTitle title={this.state.button.text}/>
-                    </View>
                     <View style={styles.imageContainer}>
                         <ButtonImage path={this.state.button.imageURL}/>
+                    </View>
+                    <View style={styles.textContainer}>
+                        <ButtonTitle title={this.state.button.text}/>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -79,14 +78,10 @@ const styles = StyleSheet.create({
         flex: 2,
         alignItems: 'center',
         justifyContent: 'center',
-        width: '100%',
-        // borderWidth: 1,
-        // backgroundColor: 'orange',
+        width: '100%'
     },
     imageContainer: {
         flex: 8,
-        alignItems: 'center',
-        // borderWidth: 1,
-        // backgroundColor: 'red',
+        alignItems: 'center'
     }
 });
