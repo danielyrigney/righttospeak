@@ -3,18 +3,41 @@ import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import ButtonTitle from './ButtonTitle';
 import ButtonImage from './ButtonImage';
 
+import { Constants, Speech } from 'expo';
+
 export default class ButtonView extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            button: props.button
+            button: props.button,
+            pitch: 1,
+            rate: 0.75,
+            language: 'en'
         };
     }
+    
+    speakText = () => {
+        const start = () => {
+            this.setState({ inProgress: true });
+        };
+        const complete = () => {
+            this.state.inProgress && this.setState({ inProgress: false });
+        };
+
+        Speech.speak(this.state.button.text, {
+            language: this.state.language,
+            pitch: this.state.pitch,
+            rate: this.state.rate,
+            onStart: start,
+            onDone: complete,
+            onStopped: complete,
+            onError: complete,
+        });
+    };
 
     updateDisplayText = () => {
         const { text } = this.state.button;
-
         this.props.updateDisplayText(text);
     }
 
@@ -24,7 +47,7 @@ export default class ButtonView extends Component {
         return (
             <View style={styles.container}>
 
-                <TouchableOpacity title="" onPress={this.updateDisplayText} style={styles.touchableOpacityContainer}>
+                <TouchableOpacity title="" onPress={() => {this.updateDisplayText(); this.speakText()}} style={styles.touchableOpacityContainer}>
                     <View style={styles.textContainer}>
                         <ButtonTitle title={this.state.button.text}/>
                     </View>

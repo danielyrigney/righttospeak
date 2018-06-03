@@ -51,7 +51,7 @@ const Board = (props) => {
        <Col fullWidth> 
          <Row rtl>
            <Col fullWidth offsetPoints={10}>
-             <TouchableOpacity onPress={() => {props.hide(props.id)}}>
+             <TouchableOpacity onPress={() => {}}>
                <Text style={{fontSize: 22, marginTop: 15}}>
                  <ButtonView
                   button={button}
