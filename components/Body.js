@@ -3,10 +3,6 @@ import { Platform, StyleSheet, Text, View } from 'react-native';
 
 import GridOfButtons from './GridOfButtons';
 
-import ButtonView from './ButtonView';
-import Board from './Board';
-
-
 export default class Body extends Component {
   updateDisplayText = (text) => {
     this.props.updateDisplayText(text);
@@ -15,17 +11,10 @@ export default class Body extends Component {
   render() {
     return (
       <View style={styles.container}>
-
         <GridOfButtons
           buttons={this.props.buttons}
-
-
-        <Board/>
-        <ButtonView
-          button={this.props.buttons[0]}
           updateDisplayText={this.updateDisplayText}
         />
-
       </View>
     );
   }
