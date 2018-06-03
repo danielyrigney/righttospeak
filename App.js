@@ -335,6 +335,7 @@ const styles = StyleSheet.create({
     innerModal: {
         height: screenHeight * 0.5,
         width: screenWidth * 0.7,
+        marginTop: 200,
         backgroundColor: '#E6E8F2',
         justifyContent: 'center',
         alignItems: 'center',
@@ -343,6 +344,7 @@ const styles = StyleSheet.create({
         borderRadius: 26,
     },
     modalTitle: {
+        paddingTop: 45,
         fontSize: normalize(40),
         marginBottom: 12
     },

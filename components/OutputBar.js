@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     // Text area where a pressed button is displayed
     displayTextContainer: {
         flexGrow: 9,
-        maxWidth: 0.8 * screenWidth,
+        maxWidth: 0.9 * screenWidth,
         paddingLeft: 16,
         paddingRight: 16
     },
@@ -66,10 +66,12 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     clearButtonTouchable: {
-        alignItems: 'center',
+        alignItems: 'flex-start'
     },
     clearButtonText: {
         color: "#eee",
         fontSize: normalize(80),
+        lineHeight: normalize(80),
+        alignSelf: 'center'
     }
 });
