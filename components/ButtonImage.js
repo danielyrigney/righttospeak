@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet, Text } from 'react-native';
 
-export default class ButtonTitle extends Component {
+export default class ButtonImage extends Component {
     render() {
         return (
             <Image source={this.props.path} resizeMode="contain" style={styles.image} />
