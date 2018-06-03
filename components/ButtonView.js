@@ -63,6 +63,7 @@ export default class ButtonView extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        width: '100%',
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
