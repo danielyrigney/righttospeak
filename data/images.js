@@ -9,49 +9,49 @@ export default images = [
         id: '0',
         imageURL: require('../assets/P/person_P.bmp'),
         keywords: ['person', 'people', 'man', 'woman', 'guy', 'girl'],
-        categories: ['things']
+        categories: ['things', 'people']
     },
     {
         id: '1',
         imageURL: require('../assets/M/me5.bmp'),
         keywords: ['i', 'my', 'gift', 'girl', 'give'],
-        categories: ['things']
+        categories: ['things', 'people']
     },
     {
         id: '2',
         imageURL: require('../assets/M/my2_P.bmp'),
         keywords: ['i', 'me', 'want', 'tag'],
-        categories: ['things']
+        categories: ['things', 'people']
     },
     {
         id: '3',
         imageURL: require('../assets/W/want_P.bmp'),
         keywords: ['i', 'me', 'take', 'photo'],
-        categories: ['play']
+        categories: ['play', 'people']
     },
     {
         id: '4',
         imageURL: require('../assets/H/him2_P.bmp'),
         keywords: ['he', 'present', 'give', 'mad'],
-        categories: ['things']
+        categories: ['things', 'people']
     },
     {
         id: '5',
         imageURL: require('../assets/H/her3_P.bmp'),
         keywords: ['she', 'her', 'present', 'happy'],
-        categories: ['things']
+        categories: ['things', 'people']
     },
     {
         id: '6',
         imageURL: require('../assets/S/she1_P.bmp'),
         keywords: ['her', 'he', 'they'],
-        categories: ['things']
+        categories: ['things', 'people']
     },
     {
         id: '7',
         imageURL: require('../assets/H/he1_P.bmp'),
         keywords: ['him', 'her', 'they'],
-        categories: ['things']
+        categories: ['things', 'people']
     },
     {
         id: '8',

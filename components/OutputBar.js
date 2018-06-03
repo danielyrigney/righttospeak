@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     clearButtonText: {
         color: "#eee",
         fontSize: normalize(80),
-        lineHeight: normalize(80),
+        lineHeight: normalize(90),
         alignSelf: 'center'
     }
 });
