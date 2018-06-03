@@ -1,5 +1,11 @@
 export default images = [
     {
+        id: '-1',
+        imageURL: require('../assets/I/I1_P.bmp'),
+        keywords: ['me', 'my', 'girl', 'self'],
+        categories: ['things']
+    },
+    {
         id: '0',
         imageURL: require('../assets/P/person_P.bmp'),
         keywords: ['person', 'people', 'man', 'woman', 'guy', 'girl'],

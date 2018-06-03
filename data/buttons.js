@@ -1,5 +1,19 @@
 export default buttons = [
     {
+        id: '-1',
+        text: 'All',
+        partOfSpeech: '',
+        type: 'action',
+        imageId: '25',
+        coordinates: {
+            '8_5': {
+                x: 0,
+                y: 0
+            }
+        },
+        boards: ['0']
+    },
+    {
         id: '0',
         text: 'People',
         partOfSpeech: '',
