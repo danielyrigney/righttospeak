@@ -1,3 +1,6 @@
-node_modules/**/*
+assets/.DS_Store
+.DS_Store
 .expo/*
+node_modules/**/*
 npm-debug.*
+.vs/
