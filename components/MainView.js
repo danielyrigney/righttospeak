@@ -4,8 +4,7 @@ import { StyleSheet, View, StatusBar } from 'react-native';
 import Body from './Body';
 import OutputBar from './OutputBar.js';
 
-const statusBarHeight = StatusBar.currentHeight || 20;
-
+// Parent component for Header and Body components
 export default class MainView extends Component {
     render() {
         return (
@@ -15,6 +14,7 @@ export default class MainView extends Component {
                     clearDisplayText={this.props.clearDisplayText}
                 />
 
+              {/* Main Body component - contains boards with buttons */}
                 <Body
                     buttons={this.props.buttons}
                     updateDisplayText={this.props.updateDisplayText}
@@ -25,6 +25,8 @@ export default class MainView extends Component {
     }
 }
 
+
+// CSS styles for MainView component
 const styles = StyleSheet.create({
     container: {
         height: '100%',

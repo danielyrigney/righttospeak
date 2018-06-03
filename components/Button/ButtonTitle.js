@@ -1,20 +1,7 @@
 import React, { Component } from 'react';
 import { Dimensions, Platform, PixelRatio, StyleSheet, Text } from 'react-native';
 
-// get screen dimensions
-const { height: screenHeight, width: screenWidth } = Dimensions.get('window');
-
-// based on iPhone 5s's scale
-const scale = screenWidth / 320;
-
-// used to modify text size in buttons
-const normalize = (size) => {
-    if (Platform.OS === 'ios') {
-        return Math.round(PixelRatio.roundToNearestPixel(size))
-    } else {
-        return Math.round(PixelRatio.roundToNearestPixel(size)) - 2
-    }
-}
+import normalize from './../../utils/normalize';
 
 // button text
 export default class ButtonTitle extends Component {
@@ -25,9 +12,11 @@ export default class ButtonTitle extends Component {
     }
 }
 
+// CSS Style
 const styles = StyleSheet.create({
     text: {
         textAlign: 'center',
+        // uses util function to normalize font
         fontSize: normalize(50),
     }
 });
