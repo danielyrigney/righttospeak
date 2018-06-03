@@ -41,10 +41,18 @@ export default class ButtonView extends Component {
 
     // button text displayed in output bar when button is tapped
     onPressOnView = () => {
-        const { text } = this.state.button;
+        const { text, type } = this.state.button;
 
-        this.props.updateDisplayText(text);
-        this.speakText();
+        if (type === 'action') {
+            const category = text.toLowerCase();
+
+            this.props.filterButtonsByCategory(category);
+
+        } else {
+            this.props.updateDisplayText(text);
+            this.speakText();
+
+        }
     }
 
     // edit mode opened when button is long pressed
@@ -60,7 +68,12 @@ export default class ButtonView extends Component {
 
         return (
             <View style={[styles.container, { borderColor: Constants.colorScheme[this.state.button.partOfSpeech] }]}>
-                <TouchableOpacity title="" onPress={this.onPressOnView} onLongPress={this.onPressOnEdit} style={styles.touchableOpacityContainer}>
+                <TouchableOpacity
+                    title=""
+                    style={styles.touchableOpacityContainer}
+                    onPress={this.onPressOnView}
+                    onLongPress={this.onPressOnEdit}
+                >
                     <View style={styles.textContainer}>
                         <ButtonTitle title={text} />
                     </View>

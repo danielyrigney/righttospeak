@@ -28,8 +28,7 @@ const showAll = (e) => {
     });
 };
 
-// defines grid's columns and rows
-const Board = (props) => {
+const ButtonContainer = (props) => {
     const { button, properties } = props;
     const buttonColor = Constants.colorScheme[button.partOfSpeech];
 
@@ -49,6 +48,7 @@ const Board = (props) => {
                             button={button}
                             updateDisplayText={properties.updateDisplayText}
                             launchEditButtonModal={properties.launchEditButtonModal}
+                            filterButtonsByCategory={properties.filterButtonsByCategory}
                         />
                     </TouchableOpacity>
                 </Column>
@@ -59,7 +59,8 @@ const Board = (props) => {
 
 const layout = (buttons, state, props) => {
     return buttons.map(button => {
-        return ([<Board
+        return (
+            <ButtonContainer
                 button={button}
                 state={state}
                 properties={props}
@@ -68,8 +69,8 @@ const layout = (buttons, state, props) => {
                 id={button.id}
                 text={button.text}
                 elements={elements}
-                hide={hide}
-        />]);
+            />
+        );
     });
 };
 
@@ -82,9 +83,9 @@ export default class GridOfButtons extends Component {
             <Grid>{
                 ({ state, setState }) => {
                     return (
-                        <Column fullHeight style={{backgroundColor: 'lightgray'}}>
+                        <Column fullHeight>
                             <ScrollView removeClippedSubviews={true} >
-                                <TouchableOpacity activeOpacity={1} onPress={(e) => showAll(e)}>
+                                <TouchableOpacity activeOpacity={1}>
                                     <Row>{layout(buttons, state, this.props)}</Row>
                                 </TouchableOpacity>
                             </ScrollView>

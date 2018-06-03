@@ -165,6 +165,48 @@ export default class App extends Component {
         });
     }
 
+    filterButtonsByCategory = (category) => {
+        let imageIdsMatchingCategory = [];
+        let buttonsMatchingCategory = [];
+
+        // Show all buttons
+        if (category === 'all') {
+            buttonsMatchingCategory = buttons;
+
+        } else {
+            // Find all images that match the category
+            for (let image of images) {
+                if (image.hasOwnProperty('categories') && image.categories.includes(category)) {
+                    imageIdsMatchingCategory.push(image.id);
+                }
+            }
+
+            // Find all buttons that use the images
+            for (let button of buttons) {
+                if (button.type === 'action' || imageIdsMatchingCategory.includes(button.imageId)) {
+                    buttonsMatchingCategory.push(button);
+                }
+            }
+
+        }
+
+        this.setState({
+            // View mode
+            displayText: '',
+            displayWords: [],
+            buttons: buttonsMatchingCategory,
+
+            // Edit mode
+            isEditButtonModalVisible: false,
+            buttonToEdit_id: undefined,
+            buttonToEdit_text: '',
+            buttonToEdit_imageId: undefined,
+
+            // Search function for Edit mode
+            possibleImagesForButton: [],
+        });
+    }
+
     render() {
         if (this.state.isEditButtonModalVisible) {
             const { buttonToEdit_id: id } = this.state;
@@ -208,20 +250,20 @@ export default class App extends Component {
                                     />
 
                                     <View style={styles.flatListContainer}>
-                                            <FlatList
-                                                horizontal={true}
-                                                data={this.state.possibleImagesForButton}
-                                                renderItem={({ item }) => (
-                                                    <TouchableOpacity onPress={() => {
-                                                        this.setState({
-                                                            ...this.state,
-                                                            buttonToEdit_imageId: item.id
-                                                        });
-                                                    }}>
-                                                        <ButtonImage path={item.imageURL} />
-                                                    </TouchableOpacity>
-                                                )}
-                                            />
+                                        <FlatList
+                                            horizontal={true}
+                                            data={this.state.possibleImagesForButton}
+                                            renderItem={({ item }) => (
+                                                <TouchableOpacity onPress={() => {
+                                                    this.setState({
+                                                        ...this.state,
+                                                        buttonToEdit_imageId: item.id
+                                                    });
+                                                }}>
+                                                    <ButtonImage path={item.imageURL} />
+                                                </TouchableOpacity>
+                                            )}
+                                        />
                                     </View>
                                 </View>
 
@@ -252,7 +294,7 @@ export default class App extends Component {
                         buttons={this.state.buttons}
                     />
                 </View>
-            </View >    
+            </View >
             );
 
         } else {
@@ -264,6 +306,7 @@ export default class App extends Component {
                         updateDisplayText={this.updateDisplayText}
                         toggleEditButton={this.toggleEditButton}
                         launchEditButtonModal={this.launchEditButtonModal}
+                        filterButtonsByCategory={this.filterButtonsByCategory}
 
                         displayText={this.state.displayText}
                         isEditButtonModalVisible={this.state.isEditButtonModalVisible}
