@@ -27,7 +27,7 @@ export default class App extends Component {
             isEditButtonModalVisible: false,
             buttonToEdit_id: undefined,
             buttonToEdit_text: '',
-            buttonToEdit_imageID: undefined,
+            buttonToEdit_imageId: undefined,
 
             // Search function for Edit mode
             possibleImagesForButton: [],
@@ -80,7 +80,8 @@ export default class App extends Component {
 
             isEditButtonModalVisible: true,
             buttonToEdit_id: id,
-            buttonToEdit_text: this.state.buttons[id].text
+            buttonToEdit_text: this.state.buttons[id].text,
+            buttonToEdit_imageId: this.state.buttons[id].imageId
         });
     }
 
@@ -131,7 +132,7 @@ export default class App extends Component {
                 {
                     ...this.state.buttons[index],
                     text: this.state.buttonToEdit_text,
-                    imageID: this.state.buttonToEdit_imageID
+                    imageId: this.state.buttonToEdit_imageId
                 },
 
                 // Keep everything after
@@ -142,7 +143,7 @@ export default class App extends Component {
             isEditButtonModalVisible: false,
             buttonToEdit_id: undefined,
             buttonToEdit_text: '',
-            buttonToEdit_imageID: undefined,
+            buttonToEdit_imageId: undefined,
             possibleImagesForButton: []
         });
     }
@@ -155,7 +156,7 @@ export default class App extends Component {
             isEditButtonModalVisible: false,
             buttonToEdit_id: undefined,
             buttonToEdit_text: '',
-            buttonToEdit_imageID: undefined,
+            buttonToEdit_imageId: undefined,
             possibleImagesForButton: []
         });
     }
@@ -210,7 +211,7 @@ export default class App extends Component {
                                                     <TouchableOpacity onPress={() => {
                                                         this.setState({
                                                             ...this.state,
-                                                            buttonToEdit_imageID: item.id
+                                                            buttonToEdit_imageId: item.id
                                                         });
                                                     }}>
                                                         <ButtonImage path={item.imageURL} />
