@@ -1,9 +1,10 @@
+import { Speech } from 'expo';
 import React, { Component } from 'react';
-import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
 import ButtonTitle from './ButtonTitle';
 import ButtonImage from './ButtonImage';
-import Constants from '../data/constants';
-import { Speech } from 'expo';
+import Constants from '../../data/constants';
 
 export default class ButtonView extends Component {
     constructor(props) {
@@ -53,13 +54,14 @@ export default class ButtonView extends Component {
         const { text } = this.state.button;
 
         return (
-            <View style={[styles.container, {borderColor: Constants.colorScheme[this.state.button.partOfSpeech]}]}>
+            <View style={[styles.container, { borderColor: Constants.colorScheme[this.state.button.partOfSpeech] }]}>
                 <TouchableOpacity title="" onPress={this.onPressOnView} onLongPress={this.onPressOnEdit} style={styles.touchableOpacityContainer}>
                     <View style={styles.imageContainer}>
                         <ButtonImage path={this.state.button.imageURL}/>
                     </View>
+
                     <View style={styles.textContainer}>
-                        <ButtonTitle title={this.state.button.text}/>
+                        <ButtonTitle title={text}/>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -82,14 +84,14 @@ const styles = StyleSheet.create({
     touchableOpacityContainer: {
         flex: 1,
     },
+    imageContainer: {
+        flex: 8,
+        alignItems: 'center'
+    },
     textContainer: {
         flex: 2,
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%'
-    },
-    imageContainer: {
-        flex: 8,
-        alignItems: 'center'
     }
 });

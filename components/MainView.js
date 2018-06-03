@@ -1,36 +1,33 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, StatusBar } from 'react-native';
 
+import Header from './Header';
+import Body from './Body';
+
 const statusBarHeight = StatusBar.currentHeight || 20;
 
-import HeaderBar from './HeaderBar.js';
-import Body from './Body.js';
-import Footer from './Footer';
-
 export default class MainView extends Component {
+    render() {
+        return (
+            <View style={styles.container}>
+                <Header
+                    displayText={this.props.displayText}
+                    clearDisplayText={this.props.clearDisplayText}
+                />
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <HeaderBar
-          displayText={this.props.displayText}
-          clearDisplayText={this.props.clearDisplayText}
-        />
-
-        <Body
-          buttons={this.props.buttons}
-          updateDisplayText={this.props.updateDisplayText}
-          launchEditButtonModal={this.props.launchEditButtonModal}
-        />
-      </View>
-    );
-  }
+                <Body
+                    buttons={this.props.buttons}
+                    updateDisplayText={this.props.updateDisplayText}
+                    launchEditButtonModal={this.props.launchEditButtonModal}
+                />
+            </View>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    marginTop: statusBarHeight,
-    // backgroundColor: 'blue',
-    height: '100%',
-  }
+    container: {
+        marginTop: statusBarHeight,
+        height: '100%',
+    }
 });
