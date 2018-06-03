@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import ButtonTitle from './ButtonTitle';
 import ButtonImage from './ButtonImage';
+import Constants from '../data/constants';
+import { Speech } from 'expo';
 
 import { Constants, Speech } from 'expo';
 
@@ -16,7 +18,7 @@ export default class ButtonView extends Component {
             language: 'en'
         };
     }
-
+    
     speakText = () => {
         const start = () => {
             this.setState({ inProgress: true });
@@ -54,14 +56,13 @@ export default class ButtonView extends Component {
         };
 
         return (
-            <View style={styles.container}>
-
+            <View style={[styles.container, {borderColor: Constants.colorScheme[this.state.button.partOfSpeech]}]}>
                 <TouchableOpacity title="" onPress={onPress} style={styles.touchableOpacityContainer}>
-                    <View style={styles.textContainer}>
-                        <ButtonTitle title={this.state.button.text}/>
-                    </View>
                     <View style={styles.imageContainer}>
                         <ButtonImage path={this.state.button.imageURL}/>
+                    </View>
+                    <View style={styles.textContainer}>
+                        <ButtonTitle title={this.state.button.text}/>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
         borderWidth: 5,
         borderColor: 'red',
         borderRadius: 50,
-        backgroundColor: 'pink',
+        backgroundColor: 'transparent',
     },
     touchableOpacityContainer: {
         flex: 1,
@@ -88,14 +89,10 @@ const styles = StyleSheet.create({
         flex: 2,
         alignItems: 'center',
         justifyContent: 'center',
-        width: '100%',
-        // borderWidth: 1,
-        // backgroundColor: 'orange',
+        width: '100%'
     },
     imageContainer: {
         flex: 8,
-        alignItems: 'center',
-        // borderWidth: 1,
-        // backgroundColor: 'red',
+        alignItems: 'center'
     }
 });

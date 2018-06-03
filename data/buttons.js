@@ -481,7 +481,7 @@ export default buttons = [
     {
         "id": "36",
         "text": "Police",
-        "partOfSpeech": "verb",
+        "partOfSpeech": "noun",
         "type": "fringe",
         "imageURL": require('../assets/P/policeman2b_P.bmp'),
         "coordinates": {
@@ -497,7 +497,7 @@ export default buttons = [
         "text": "Trash",
         "partOfSpeech": "noun",
         "type": "fringe",
-        "imageURL": require('../assets/T/trash can_P.bmp'),
+        "imageURL": require('../assets/T/trash_can_P.bmp'),
         "coordinates": {
             "5_8": {
                 "x": 7,

@@ -18,7 +18,7 @@ const normalize = (size) => {
 export default class ButtonTitle extends Component {
   render() {
     return (
-        <Text>{this.props.title}</Text>
+        <Text style={styles.text}>{this.props.title}</Text>
     )
   }
 }
@@ -26,6 +26,6 @@ export default class ButtonTitle extends Component {
 const styles = StyleSheet.create({
     text: {
         textAlign: 'center',
-        fontSize: normalize(30),
+        fontSize: normalize(50),
     },
 });
