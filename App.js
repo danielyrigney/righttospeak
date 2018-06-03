@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StatusBar, StyleSheet, View, Modal, TouchableHighlight, Text, TextInput, Dimensions } from 'react-native';
+import { StatusBar, StyleSheet, View, Modal, TouchableHighlight, TouchableOpacity, Text, TextInput, Dimensions, FlatList } from 'react-native';
 import Expo from 'expo';
 
 const { height: screenHeight, width: screenWidth } = Dimensions.get('window');
@@ -7,9 +7,11 @@ const { height: screenHeight, width: screenWidth } = Dimensions.get('window');
 import MainView from './components/MainView';
 import ButtonImage from './components/Button/ButtonImage';
 import buttons from './data/buttons';
+import images from './data/images';
 import normalize from './utils/normalize';
 
 const MAX_DISPLAY_WORDS = 16;
+const MAX_IMAGE_SEARCH_RESULTS = 5;
 
 export default class App extends Component {
     constructor(props) {
@@ -25,7 +27,10 @@ export default class App extends Component {
             isEditButtonModalVisible: false,
             buttonToEdit_id: undefined,
             buttonToEdit_text: '',
-            buttonToEdit_imageURL: ''
+            buttonToEdit_imageId: undefined,
+
+            // Search function for Edit mode
+            possibleImagesForButton: [],
         };
     }
 
@@ -78,7 +83,39 @@ export default class App extends Component {
             isEditButtonModalVisible: true,
             buttonToEdit_id: id,
             buttonToEdit_text: this.state.buttons[id].text,
-            buttonToEdit_imageURL: this.state.buttons[id].imageURL,
+            buttonToEdit_imageId: this.state.buttons[id].imageId
+        });
+    }
+
+    searchImages = (searchText) => {
+        searchText = searchText.toLowerCase();
+
+        let possibleImagesForButton = [];
+        let numImagesFound = 0;
+
+        // There should be enough characters for search
+        if (searchText.length > 1) {
+            for (let image of images) {
+                if (image.hasOwnProperty('keywords')) {
+                    for (let keyword of image.keywords) {
+                        if (keyword.includes(searchText)) {
+                            possibleImagesForButton.push(image);
+                            numImagesFound++;
+
+                            break;
+                        }
+                    }
+
+                    if (numImagesFound === MAX_IMAGE_SEARCH_RESULTS) {
+                        break;
+                    }
+                }
+            }
+        }
+
+        this.setState({
+            ...this.state,
+            possibleImagesForButton
         });
     }
 
@@ -97,7 +134,8 @@ export default class App extends Component {
                 // Insert the new state
                 {
                     ...this.state.buttons[index],
-                    text: this.state.buttonToEdit_text
+                    text: this.state.buttonToEdit_text,
+                    imageId: this.state.buttonToEdit_imageId
                 },
 
                 // Keep everything after
@@ -108,7 +146,8 @@ export default class App extends Component {
             isEditButtonModalVisible: false,
             buttonToEdit_id: undefined,
             buttonToEdit_text: '',
-            buttonToEdit_imageURL: ''
+            buttonToEdit_imageId: undefined,
+            possibleImagesForButton: []
         });
     }
 
@@ -121,7 +160,8 @@ export default class App extends Component {
             isEditButtonModalVisible: false,
             buttonToEdit_id: undefined,
             buttonToEdit_text: '',
-            buttonToEdit_imageURL: ''
+            buttonToEdit_imageId: undefined,
+            possibleImagesForButton: []
         });
     }
 
@@ -131,9 +171,10 @@ export default class App extends Component {
             let button = this.state.buttons[id];
 
             return (
+            <View>
                 <Modal
                     animationType="slide"
-                    transparent={false}
+                    transparent={true}
                     visible={this.state.isEditButtonModalVisible}
                 >
                     <View style={styles.modalContainer}>
@@ -158,25 +199,60 @@ export default class App extends Component {
                                 </View>
 
                                 <View style={styles.formItemContainer}>
-                                    <Text style={styles.label}>Select Image:</Text>
-                                    <View style={styles.imageContainer}>
-                                        <ButtonImage path={this.state.buttonToEdit_imageURL}/>
+                                    <Text style={styles.label}>Search for Image:</Text>
+                                    <TextInput
+                                        style={styles.textInput}
+                                        autoFocus={true}
+                                        placeholder="I'm looking for..."
+                                        onChangeText={this.searchImages.bind(this)}
+                                    />
+
+                                    <View style={styles.flatListContainer}>
+                                            <FlatList
+                                                horizontal={true}
+                                                data={this.state.possibleImagesForButton}
+                                                renderItem={({ item }) => (
+                                                    <TouchableOpacity onPress={() => {
+                                                        this.setState({
+                                                            ...this.state,
+                                                            buttonToEdit_imageId: item.id
+                                                        });
+                                                    }}>
+                                                        <ButtonImage path={item.imageURL} />
+                                                    </TouchableOpacity>
+                                                )}
+                                            />
                                     </View>
                                 </View>
 
                                 <View style={styles.formCancelButtons}>
-                                    <TouchableHighlight onPress={this.cancelEditButton} style={[styles.modalButton, styles.cancelEditButton]}>
-                                        <Text style={styles.modalButtonText}>Cancel</Text>
-                                    </TouchableHighlight>
-
                                     <TouchableHighlight onPress={this.saveEditButton} style={[styles.modalButton, styles.saveEditButton]}>
                                         <Text style={styles.modalButtonText}>Save</Text>
+                                    </TouchableHighlight>
+
+                                    <TouchableHighlight onPress={this.cancelEditButton} style={[styles.modalButton, styles.cancelEditButton]}>
+                                        <Text style={styles.modalButtonText}>Cancel</Text>
                                     </TouchableHighlight>
                                 </View>
                             </View>
                         </View>
                     </View>
                 </Modal>
+                <View>
+                    <StatusBar hidden={true} />
+                    <MainView
+                        clearDisplayText={this.clearDisplayText}
+                        updateDisplayText={this.updateDisplayText}
+                        toggleEditButton={this.toggleEditButton}
+                        launchEditButtonModal={this.launchEditButtonModal}
+
+                        displayText={this.state.displayText}
+                        isEditButtonModalVisible={this.state.isEditButtonModalVisible}
+
+                        buttons={this.state.buttons}
+                    />
+                </View>
+            </View >    
             );
 
         } else {
@@ -205,18 +281,23 @@ export default class App extends Component {
 // CSS styling
 const styles = StyleSheet.create({
     modalContainer: {
-        flex: 1,
+        // flex: 1,
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'center',
+        backgroundColor: '#00000000',
+        marginTop: 16
     },
 
     innerModal: {
-        height: screenHeight * 0.6,
+        height: screenHeight * 0.5,
         width: screenWidth * 0.7,
-        backgroundColor: 'yellow',
+        backgroundColor: '#E6E8F2',
         justifyContent: 'center',
         alignItems: 'center',
+        borderWidth: 8,
+        borderColor: '#4E598C',
+        borderRadius: 26,
     },
     modalTitle: {
         fontSize: normalize(40),
@@ -229,7 +310,6 @@ const styles = StyleSheet.create({
     },
     textInput: {
         fontSize: normalize(20),
-        width: screenHeight * 0.2,
         width: screenWidth * 0.36,
     },
     outerFormContainer: {
@@ -242,21 +322,28 @@ const styles = StyleSheet.create({
         paddingBottom: 8,
         alignItems: 'center'
     },
+    flatListContainer: {
+        height: screenHeight * 0.2,
+    },
     formCancelButtons: {
         flexDirection: 'row',
         alignItems: 'center',
     },
     modalButton: {
-        height: screenHeight * 0.08,
+        height: screenHeight * 0.06,
         width: screenWidth * 0.18,
         justifyContent: 'center',
         alignItems: 'center',
+        borderWidth: 2,
+        borderColor: 'transparent',
+        borderRadius: 5,
+        marginHorizontal: 2,
     },
     cancelEditButton: {
-        backgroundColor: 'red'
+        backgroundColor: '#ef9a9a'
     },
     saveEditButton: {
-        backgroundColor: 'green'
+        backgroundColor: '#c8e6c9'
     },
     modalButtonText: {
         fontSize: normalize(20)

@@ -1,576 +1,562 @@
 export default buttons = [
     {
-        id: '0',
-        text: 'I',
-        partOfSpeech: 'pronoun',
-        type: 'core',
-        imageURL: require('../assets/I/I1_P.bmp'),
+        id: "0",
+        text: "I",
+        partOfSpeech: "pronoun",
+        type: "core",
+        imageId: "0",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 1,
                 y: 0
             }
         },
-        boards: ['0'],
-        keywords: ['me', 'my', 'girl']
-    }, {
-        id: '1',
-        text: 'Me',
-        partOfSpeech: 'pronoun',
-        type: 'core',
-        imageURL: require('../assets/M/me5.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "1",
+        text: "Me",
+        partOfSpeech: "pronoun",
+        type: "core",
+        imageId: "1",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 2,
                 y: 0
             }
         },
-        boards: ['0'],
-        keywords: ['i', 'my', 'gift']
-    }, {
-        id: '2',
-        text: 'My',
-        partOfSpeech: 'pronoun',
-        type: 'core',
-        imageURL: require('../assets/M/my2_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "2",
+        text: "My",
+        partOfSpeech: "pronoun",
+        type: "core",
+        imageId: "2",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 3,
                 y: 0
             }
         },
-        boards: ['0'],
-        keywords: ['i', 'me', 'want']
-    }, {
-        id: '3',
-        text: 'Want',
-        partOfSpeech: 'pronoun',
-        type: 'core',
-        imageURL: require('../assets/W/want_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "3",
+        text: "Want",
+        partOfSpeech: "pronoun",
+        type: "core",
+        imageId: "3",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 4,
                 y: 0
             }
         },
-        boards: ['0'],
-        keywords: ['i', 'me', 'take']
-    }, {
-        id: '4',
-        text: 'Him',
-        partOfSpeech: 'pronoun',
-        type: 'core',
-        imageURL: require('../assets/H/him2_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "4",
+        text: "Him",
+        partOfSpeech: "pronoun",
+        type: "core",
+        imageId: "4",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 5,
                 y: 0
             }
         },
-        boards: ['0'],
-        keywords: ['he', 'present', 'give']
-    }, {
-        id: '5',
-        text: 'Her',
-        partOfSpeech: 'pronoun',
-        type: 'core',
-        imageURL: require('../assets/H/her3_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "5",
+        text: "Her",
+        partOfSpeech: "pronoun",
+        type: "core",
+        imageId: "5",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 1,
                 y: 1
             }
         },
-        boards: ['0'],
-        keywords: ['she', 'her', 'present']
-    }, {
-        id: '6',
-        text: 'She',
-        partOfSpeech: 'pronoun',
-        type: 'core',
-        imageURL: require('../assets/S/she1_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "6",
+        text: "She",
+        partOfSpeech: "pronoun",
+        type: "core",
+        imageId: "6",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 2,
                 y: 1
             }
         },
-        boards: ['0'],
-        keywords: ['her', 'he', 'they']
-    }, {
-        id: '7',
-        text: 'He',
-        partOfSpeech: 'pronoun',
-        type: 'core',
-        imageURL: require('../assets/H/he1_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "7",
+        text: "He",
+        partOfSpeech: "pronoun",
+        type: "core",
+        imageId: "7",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 3,
                 y: 1
             }
         },
-        boards: ['0'],
-        keywords: ['him', 'her', 'they']
-    }, {
-        id: '8',
-        text: 'Like',
-        partOfSpeech: 'verb',
-        type: 'core',
-        imageURL: require('../assets/L/like_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "8",
+        text: "Like",
+        partOfSpeech: "verb",
+        type: "core",
+        imageId: "8",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 4,
                 y: 1
             }
         },
-        boards: ['0'],
-        keywords: ['happy', 'sun', 'light']
-    }, {
-        id: '9',
-        text: 'Stop',
-        partOfSpeech: 'verb',
-        type: 'core',
-        imageURL: require('../assets/S/stop_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "9",
+        text: "Stop",
+        partOfSpeech: "verb",
+        type: "core",
+        imageId: "9",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 5,
                 y: 1
             }
         },
-        boards: ['0'],
-        keywords: ['sign', 'red', 'traffic']
-    }, {
-        id: '10',
-        text: 'Come',
-        partOfSpeech: 'verb',
-        type: 'core',
-        imageURL: require('../assets/C/come_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "10",
+        text: "Come",
+        partOfSpeech: "verb",
+        type: "core",
+        imageId: "10",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 1,
                 y: 2
             }
         },
-        boards: ['0'],
-        keywords: ['giant dog', 'pet', 'here']
-    }, {
-        id: '11',
-        text: 'Go',
-        partOfSpeech: 'verb',
-        type: 'core',
-        imageURL: require('../assets/G/go_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "11",
+        text: "Go",
+        partOfSpeech: "verb",
+        type: "core",
+        imageId: "11",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 2,
                 y: 2
             }
         },
-        boards: ['0'],
-        keywords: ['green', 'right', 'away']
-    }, {
-        id: '12',
-        text: 'Away',
-        partOfSpeech: 'adverb',
-        type: 'core',
-        imageURL: require('../assets/A/away2_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "12",
+        text: "Away",
+        partOfSpeech: "adverb",
+        type: "core",
+        imageId: "12",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 3,
                 y: 2
             }
         },
-        boards: ['0'],
-        keywords: ['leave', 'goodbye', 'go']
-    }, {
-        id: '13',
-        text: 'Any',
-        partOfSpeech: 'adverb',
-        type: 'core',
-        imageURL: require('../assets/A/any_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "13",
+        text: "Any",
+        partOfSpeech: "adverb",
+        type: "core",
+        imageId: "13",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 4,
                 y: 2
             }
         },
-        boards: ['0'],
-        keywords: ['all', 'anything', 'questions']
-    }, {
-        id: '14',
-        text: 'Nothing',
-        partOfSpeech: 'noun',
-        type: 'core',
-        imageURL: require('../assets/N/nothing_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "14",
+        text: "Nothing",
+        partOfSpeech: "noun",
+        type: "core",
+        imageId: "14",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 5,
                 y: 2
             }
         },
-        boards: ['0'],
-        keywords: ['empty', 'truck', 'big']
-    }, {
-        id: '15',
-        text: 'Hello',
-        partOfSpeech: 'interjection',
-        type: 'core',
-        imageURL: require('../assets/H/hello_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "15",
+        text: "Hello",
+        partOfSpeech: "interjection",
+        type: "core",
+        imageId: "15",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 1,
                 y: 3
             }
         },
-        boards: ['0'],
-        keywords: ['goodbye', 'answer', 'phone']
-    }, {
-        id: '16',
-        text: 'Goodbye',
-        partOfSpeech: 'interjection',
-        type: 'core',
-        imageURL: require('../assets/G/goodbye_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "16",
+        text: "Goodbye",
+        partOfSpeech: "interjection",
+        type: "core",
+        imageId: "16",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 2,
                 y: 3
             }
         },
-        boards: ['0'],
-        keywords: ['hello', 'go', 'away']
-    }, {
-        id: '17',
-        text: 'Little',
-        partOfSpeech: 'adjective',
-        type: 'core',
-        imageURL: require('../assets/L/little_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "17",
+        text: "Little",
+        partOfSpeech: "adjective",
+        type: "core",
+        imageId: "17",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 3,
                 y: 3
             }
         },
-        boards: ['0'],
-        keywords: ['big', 'under', 'cat']
-    }, {
-        id: '18',
-        text: 'Big',
-        partOfSpeech: 'adjective',
-        type: 'core',
-        imageURL: require('../assets/B/big_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "18",
+        text: "Big",
+        partOfSpeech: "adjective",
+        type: "core",
+        imageId: "18",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 4,
                 y: 3
             }
         },
-        boards: ['0'],
-        keywords: ['little', 'dog', 'me']
-    }, {
-        id: '19',
-        text: 'Wait',
-        partOfSpeech: 'verb',
-        type: 'core',
-        imageURL: require('../assets/W/wait_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "19",
+        text: "Wait",
+        partOfSpeech: "verb",
+        type: "core",
+        imageId: "19",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 5,
                 y: 3
             }
         },
-        boards: ['0'],
-        keywords: ['come', 'stop', 'leave']
-    }, {
-        id: '20',
-        text: 'Over',
-        partOfSpeech: 'preposition',
-        type: 'core',
-        imageURL: require('../assets/O/over_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "20",
+        text: "Over",
+        partOfSpeech: "preposition",
+        type: "core",
+        imageId: "20",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 1,
                 y: 4
             }
         },
-        boards: ['0'],
-        keywords: ['under', 'finish', 'done']
-    }, {
-        id: '21',
-        text: 'Under',
-        partOfSpeech: 'preposition',
-        type: 'core',
-        imageURL: require('../assets/U/under_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "21",
+        text: "Under",
+        partOfSpeech: "preposition",
+        type: "core",
+        imageId: "21",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 2,
                 y: 4
             }
         },
-        boards: ['0'],
-        keywords: ['over', 'beneath', 'next']
-    }, {
-        id: '22',
-        text: 'Left',
-        partOfSpeech: 'adjective',
-        type: 'core',
-        imageURL: require('../assets/L/left1_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "22",
+        text: "Left",
+        partOfSpeech: "adjective",
+        type: "core",
+        imageId: "22",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 3,
                 y: 4
             }
         },
-        boards: ['0'],
-        keywords: ['leave', 'right', 'side']
-    }, {
-        id: '23',
-        text: 'Right',
-        partOfSpeech: 'adjective',
-        type: 'core',
-        imageURL: require('../assets/R/right1a_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "23",
+        text: "Right",
+        partOfSpeech: "adjective",
+        type: "core",
+        imageId: "23",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 4,
                 y: 4
             }
         },
-        boards: ['0'],
-        keywords: ['leave', 'right', 'side']
-    }, {
-        id: '24',
-        text: 'Leave',
-        partOfSpeech: 'verb',
-        type: 'core',
-        imageURL: require('../assets/L/leave_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "24",
+        text: "Leave",
+        partOfSpeech: "verb",
+        type: "core",
+        imageId: "24",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 5,
                 y: 4
             }
         },
-        boards: ['0']
-    },     {
-        id: '25',
-        text: 'All',
-        partOfSpeech: '',
-        type: 'action',
-        imageURL: require('../assets/A/all_P.bmp'),
+        boards: ["0"]
+    },
+    {
+        id: "25",
+        text: "All",
+        partOfSpeech: "",
+        type: "action",
+        imageId: "25",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 0,
                 y: 0
             }
         },
-        boards: ['0'],
-        keywords: ['any', 'us', 'them']
+        boards: ["0"]
     },
     {
-        id: '26',
-        text: 'Food',
-        partOfSpeech: '',
-        type: 'action',
-        imageURL: require('../assets/F/food_P.bmp'),
+        id: "26",
+        text: "Food",
+        partOfSpeech: "",
+        type: "action",
+        imageId: "26",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 0,
                 y: 1
             }
         },
-        boards: ['0'],
-        keywords: ['taco', 'eat', 'hungry']
+        boards: ["0"]
     },
     {
-        id: '27',
-        text: 'Play',
-        partOfSpeech: '',
-        type: 'action',
-        imageURL: require('../assets/P/play_P.bmp'),
+        id: "27",
+        text: "Play",
+        partOfSpeech: "",
+        type: "action",
+        imageId: "27",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 0,
                 y: 2
             }
         },
-        boards: ['0'],
-        keywords: ['fun', 'like', 'jump']
+        boards: ["0"]
     },
     {
-        id: '28',
-        text: 'Emotion',
-        partOfSpeech: '',
-        type: 'action',
-        imageURL: require('../assets/F/feel_P.bmp'),
+        id: "28",
+        text: "Emotion",
+        partOfSpeech: "",
+        type: "action",
+        imageId: "28",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 0,
                 y: 3
             }
         },
-        boards: ['0'],
-        keywords: ['fun', 'like', 'jump']
+        boards: ["0"]
     },
     {
-        id: '29',
-        text: 'Things',
-        partOfSpeech: '',
-        type: 'action',
-        imageURL: require('../assets/T/thing_P.bmp'),
+        id: "29",
+        text: "Things",
+        partOfSpeech: "",
+        type: "action",
+        imageId: "29",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 0,
                 y: 4
             }
         },
-        boards: ['0'],
-        keywords: ['all', 'truck', 'car']
+        boards: ["0"]
     },
     {
-        id: '30',
-        text: 'River',
-        partOfSpeech: 'noun',
-        type: 'fringe',
-        imageURL: require('../assets/R/river_P.bmp'),
+        id: "30",
+        text: "River",
+        partOfSpeech: "noun",
+        type: "fringe",
+        imageId: "30",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 6,
                 y: 0
             }
         },
-        boards: ['0'],
-        keywords: ['water', 'beach', 'place']
+        boards: ["0"]
     },
     {
-        id: '31',
-        text: 'Fly',
-        partOfSpeech: 'noun',
-        type: 'fringe',
-        imageURL: require('../assets/F/fly1_P.bmp'),
+        id: "31",
+        text: "Fly",
+        partOfSpeech: "noun",
+        type: "fringe",
+        imageId: "31",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 6,
                 y: 1
             }
         },
-        boards: ['0'],
-        keywords: ['bug', 'wings', 'insect']
+        boards: ["0"]
     },
     {
-        id: '32',
-        text: 'Doctor',
-        partOfSpeech: 'noun',
-        type: 'fringe',
-        imageURL: require('../assets/D/Dr1_P.bmp'),
+        id: "32",
+        text: "Doctor",
+        partOfSpeech: "noun",
+        type: "fringe",
+        imageId: "32",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 6,
                 y: 2
             }
         },
-        boards: ['0'],
-        keywords: ['he', 'surgeon', 'him']
+        boards: ["0"]
     },
     {
-        id: '33',
-        text: 'Taco',
-        partOfSpeech: 'noun',
-        type: 'fringe',
-        imageURL: require('../assets/T/taco1_P.bmp'),
+        id: "33",
+        text: "Taco",
+        partOfSpeech: "noun",
+        type: "fringe",
+        imageId: "33",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 6,
                 y: 3
             }
         },
-        boards: ['0'],
-        keywords: ['food', 'eat', 'hungry']
+        boards: ["0"]
     },
     {
-        id: '34',
-        text: 'Bicycle',
-        partOfSpeech: 'noun',
-        type: 'fringe',
-        imageURL: require('../assets/B/bike1_P.bmp'),
+        id: "34",
+        text: "Bicycle",
+        partOfSpeech: "noun",
+        type: "fringe",
+        imageId: "34",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 6,
                 y: 4
             }
         },
-        boards: ['0'],
-        keywords: ['bike', 'ride', 'wheels']
+        boards: ["0"]
     },
     {
-        id: '35',
-        text: 'Bus',
-        partOfSpeech: 'noun',
-        type: 'fringe',
-        imageURL: require('../assets/B/bus1a_P.bmp'),
+        id: "35",
+        text: "Bus",
+        partOfSpeech: "noun",
+        type: "fringe",
+        imageId: "35",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 7,
                 y: 0
             }
         },
-        boards: ['0'],
-        keywords: ['big', 'ride', 'wheels']
+        boards: ["0"]
     },
     {
-        id: '36',
-        text: 'Police',
-        partOfSpeech: 'noun',
-        type: 'fringe',
-        imageURL: require('../assets/P/policeman2b_P.bmp'),
+        id: "36",
+        text: "Police",
+        partOfSpeech: "noun",
+        type: "fringe",
+        imageId: "36",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 7,
                 y: 1
             }
         },
-        boards: ['0'],
-        keywords: ['stop', 'job', 'cop']
+        boards: ["0"]
     },
     {
-        id: '37',
-        text: 'Trash',
-        partOfSpeech: 'noun',
-        type: 'fringe',
-        imageURL: require('../assets/T/trash_can_P.bmp'),
+        id: "37",
+        text: "Trash",
+        partOfSpeech: "noun",
+        type: "fringe",
+        imageId: "37",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 7,
                 y: 2
             }
         },
-        boards: ['0'],
-        keywords: ['can', 'bin', 'garbage']
+        boards: ["0"]
     },
     {
-        id: '38',
-        text: 'Cat',
-        partOfSpeech: 'noun',
-        type: 'fringe',
-        imageURL: require('../assets/C/cat1_P.bmp'),
+        id: "38",
+        text: "Cat",
+        partOfSpeech: "noun",
+        type: "fringe",
+        imageId: "38",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 7,
                 y: 3
             }
         },
-        boards: ['0'],
-        keywords: ['animal', 'kitty', 'kitten']
+        boards: ["0"]
     },
     {
-        id: '39',
-        text: 'Dog',
-        partOfSpeech: 'noun',
-        type: 'fringe',
-        imageURL: require('../assets/D/dog1_P.bmp'),
+        id: "39",
+        text: "Dog",
+        partOfSpeech: "noun",
+        type: "fringe",
+        imageId: "39",
         coordinates: {
-            '5_8': {
+            "5_8": {
                 x: 7,
                 y: 4
             }
         },
-        boards: ['0'],
-        keywords: ['animal', 'fur', 'puppy']
+        boards: ["0"]
     }
 ];
