@@ -29,7 +29,7 @@ const showAll = (e) => {
 };
 
 const Board = (props) => {
-  const { button } = props;
+  const { button, properties } = props;
   const buttonColor = Constants.colorScheme[button.partOfSpeech];
 
   return (
@@ -55,12 +55,12 @@ const Board = (props) => {
   )
 };
 
-const layout = (buttons, state, updateDisplayText) => {
+const layout = (buttons, state, props) => {
   return buttons.map(button => {
     return ([<Board
         button={button}
         state={state}
-        updateDisplayText={updateDisplayText}
+        properties={props}
 
         key={button.id}
         id={button.id}
@@ -72,9 +72,6 @@ const layout = (buttons, state, updateDisplayText) => {
 };
 
 export default class GridOfButtons extends Component {
-  updateDisplayText = (text) => {
-    this.props.updateDisplayText(text);
-  }
 
   render() {
     const { buttons } = this.props;
@@ -87,7 +84,7 @@ export default class GridOfButtons extends Component {
               <ScrollView removeClippedSubviews={true} >
                 <TouchableOpacity activeOpacity={1} onPress={(e) => showAll(e)}>
                   <Row>{
-                    layout(buttons, state, this.updateDisplayText)
+                    layout(buttons, state, this.props)
                   }</Row>
                 </TouchableOpacity>
               </ScrollView>

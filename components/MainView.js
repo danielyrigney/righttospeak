@@ -5,38 +5,23 @@ const statusBarHeight = StatusBar.currentHeight || 20;
 
 import HeaderBar from './HeaderBar.js';
 import Body from './Body.js';
+import Footer from './Footer';
 
 export default class MainView extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      displayText: ''
-    };
-  }
-
-  clearDisplayText = () => {
-    this.setState({
-      ...this.state,
-      displayText: ''
-    })
-  }
-
-  updateDisplayText = (text) => {
-    this.setState({
-      ...this.state,
-      displayText: this.state.displayText + ' ' + text
-    });
-  }
 
   render() {
     return (
       <View style={styles.container}>
-        <HeaderBar displayText={this.state.displayText} clearDisplayText={this.clearDisplayText} />
+        <HeaderBar
+          displayText={this.props.displayText}
+          clearDisplayText={this.props.clearDisplayText}
+        />
 
         <Body
+          isEditingButton={this.props.isEditingButton}
           buttons={this.props.buttons}
-          updateDisplayText={this.updateDisplayText}
+          updateDisplayText={this.props.updateDisplayText}
+          launchEditButtonModal={this.props.launchEditButtonModal}
         />
       </View>
     );
