@@ -11,7 +11,7 @@ export default class Body extends Component {
                     buttons={this.props.buttons}
                     updateDisplayText={this.props.updateDisplayText}
                     launchEditButtonModal={this.props.launchEditButtonModal}
-                    goToNewPage={this.props.goToNewPage}
+                    filterButtonsByCategory={this.props.filterButtonsByCategory}
                 />
             </View>
         );
@@ -20,7 +20,6 @@ export default class Body extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'green',
 
         ...Platform.select({
             ios: {

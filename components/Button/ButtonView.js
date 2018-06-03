@@ -39,10 +39,18 @@ export default class ButtonView extends Component {
     };
 
     onPressOnView = () => {
-        const { text } = this.state.button;
+        const { text, type } = this.state.button;
 
-        this.props.updateDisplayText(text);
-        this.speakText();
+        if (type === 'action') {
+            const category = text.toLowerCase();
+
+            this.props.filterButtonsByCategory(category);
+
+        } else {
+            this.props.updateDisplayText(text);
+            this.speakText();
+
+        }
     }
 
     onPressOnEdit = () => {
@@ -52,12 +60,17 @@ export default class ButtonView extends Component {
     }
 
     render() {
-        const { text, imageId, type } = this.state.button;
+        const { text, imageId } = this.state.button;
         const imageURL = images.find(image => image.id === imageId).imageURL;
 
         return (
             <View style={[styles.container, { borderColor: Constants.colorScheme[this.state.button.partOfSpeech] }]}>
-                <TouchableOpacity title="" onPress={type === 'action' ? this.props.goToNewPage : this.onPressOnView} onLongPress={this.onPressOnEdit} style={styles.touchableOpacityContainer}>
+                <TouchableOpacity
+                    title=""
+                    style={styles.touchableOpacityContainer}
+                    onPress={this.onPressOnView}
+                    onLongPress={this.onPressOnEdit}
+                >
                     <View style={styles.textContainer}>
                         <ButtonTitle title={text} />
                     </View>
