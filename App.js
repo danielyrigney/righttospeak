@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StatusBar, StyleSheet, View, Modal, FlatList, TouchableHighlight, Text, TextInput } from 'react-native';
+import { StatusBar, StyleSheet, View, Modal, FlatList, TouchableHighlight, TouchableOpacity, Text, TextInput } from 'react-native';
 import Expo from 'expo';
 
 import MainView from './components/MainView';
@@ -127,7 +127,8 @@ export default class App extends Component {
                 // Insert the new state
                 {
                     ...this.state.buttons[index],
-                    text: this.state.buttonToEdit_text
+                    text: this.state.buttonToEdit_text,
+                    imageURL: this.state.buttonToEdit_imageURL
                 },
 
                 // Keep everything after
@@ -194,7 +195,16 @@ export default class App extends Component {
 
                                 <FlatList
                                     data={this.state.possibleImagesForButton}
-                                    renderItem={({ item }) => <ButtonImage path={item.imageURL} />}
+                                    renderItem={({ item }) => (
+                                        <TouchableOpacity onPress={() => {
+                                            this.setState({
+                                                ...this.state,
+                                                buttonToEdit_imageURL: item.imageURL
+                                            });
+                                        }}>
+                                            <ButtonImage path={item.imageURL} />
+                                        </TouchableOpacity>
+                                    )}
                                 />
                             </View>
 
