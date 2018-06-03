@@ -5,8 +5,6 @@ import ButtonImage from './ButtonImage';
 import Constants from '../data/constants';
 import { Speech } from 'expo';
 
-import { Constants, Speech } from 'expo';
-
 export default class ButtonView extends Component {
     constructor(props) {
         super(props);
