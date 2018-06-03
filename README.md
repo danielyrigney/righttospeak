@@ -1,18 +1,56 @@
-<h1>Right to Speak</h1>
+# Right to Speak
 
-<h3>Right to Speak is an open-source Alternative and Augmentative Communication (AAC) app, written in React Native for iOS and Android. It is based on the principles of motor planning and communicative utterance.</h3>
+Imagine waking up without the ability to communicate. No voice, body language, gestures, or text. How would you hang out with your friends? Order food? Tell your family you love them?
 
+Every day, there are over two million people in the United States who lack traditional means of communication due to congenital birth defects, cerebral palsy, autism, ALS, and other disabilities. 
 
-Imagine waking up without the ability to communicate. No voice, no body language, nothing. How would you hang out with your friends? Order food? Tell your family you love them?
+With the assistance of technology, we can help those affected to communicate their choices, thoughts, and emotions. Unfortunately, cost is a large barrier to this technology. Speech-Language Pathologist, Daniel Rigney, aims to bridge this gap by creating a cross-platform app that is accessible to all.
 
-There are people here in Austin and around the country who, from birth or after, can’t use their voice to speak. Whether it is congenital birth defects, cerebral palsy, autism, ALS, or any number of diagnosed disabilities, they’ve lost the ability to communicate the way most of us can.
+## What is Right to Speak?
 
-That doesn’t mean they don’t have something to say. With technology, we can help them communicate their choices, thoughts, emotions and more. Stephen Hawking is a great example of an augmentative communication user.
+Right to Speak is our solution to this desparate need. This open-source Alternative and Augmentative Communication App is written in React Native for iOS and Android as part of the 2018 ATX Hack for Change Hackathon. 
 
-Unfortunately, there is a vast discrepancy of access to this technology. As a speech pathologist, I see that if you don’t have money, it is much more difficult to get access to this life-changing technology.
+## How to use Right to Speak:
 
-My project hopes to bridge this access gap by creating a cross-platform app that is free and based on the latest, evidence-based interventions for augmentative communication users.
+Open the application on the device.
+![Starting image](assets/README/readme1_4.png)
 
-I’m looking for volunteers with knowledge of React Native and React, JavaScript, Flexbox, design, and more.
+Tap a button to send text to the output bar.
+![Single word](assets/README/readme2.png)
 
-I’m Daniel Rigney and I believe everyone has the right to speak.
+Multiple button taps sends multiple text to the output bar.
+![Multiple words](assets/README/readme3.png)
+
+Clear the output bar by tapping on the "X". Long press on a button to open edit mode.
+![Clear output](assets/README/readme1_4.png)
+
+Long press on the toggle on the bottom right to display the keyboard.
+![Toggle keyboard](assets/README/readme5.png)
+
+Tap desired letters. When finished, tap keyboard toggle on bottom right to hide keyboard.
+![Enter new word](assets/README/readme6.png)
+
+Tap "Save" to save and close edit mode or tap "Cancel" to exit without saving.
+![Save word](assets/README/readme7.png)
+
+The new word is displayed on the button.
+![Word changed](assets/README/readme8.png)
+
+## Technologies used:
+
+* Expo
+* React
+* React Native
+* React Native Responsive Grid
+* React Native Speech
+
+## Credits:
+
+* [Angel Lo](https://github.com/thenameisangel)
+* [Daniel Rigney](https://github.com/danielyrigney)
+* [Isaac Lee](https://github.com/ijlee2)
+* [Jessica Sung](https://github.com/JessicaSung)
+* [Joshua Turgeon](https://github.com/jturgeon88)
+* [Kristin Faner](https://github.com/seeksort)
+* [Riss Gadi](https://github.com/pandafu)
+* [Victor Rojas](https://github.com/Victorrent)

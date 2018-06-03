@@ -1,5 +1,6 @@
-node_modules/**/*
-.expo/*
-npm-debug.*
+assets/.DS_Store
 .DS_Store
+.expo/*
+node_modules/**/*
+npm-debug.*
 .vs/

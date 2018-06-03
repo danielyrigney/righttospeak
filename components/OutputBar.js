@@ -14,10 +14,10 @@ const normalize = (size) => {
     }
 }
 
-export default class HeaderBar extends Component {
+export default class OutputBar extends Component {
     render() {
         return (
-            <View style={styles.headerContainer}>
+            <View style={styles.outputBarContainer}>
                 <View style={styles.displayTextContainer}>
                     <Text numberOfLines={1} ellipsizeMode="head" style={styles.displayText}>{this.props.displayText}</Text>
                 </View>
@@ -33,7 +33,7 @@ export default class HeaderBar extends Component {
 }
 
 const styles = StyleSheet.create({
-    headerContainer: {
+    outputBarContainer: {
         ...Platform.select({
             ios: {
                 backgroundColor: '#f5f5f5',
