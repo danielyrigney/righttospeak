@@ -127,9 +127,10 @@ export default class App extends Component {
             let button = this.state.buttons[id];
 
             return (
+            <View>
                 <Modal
                     animationType="slide"
-                    transparent={false}
+                    transparent={true}
                     visible={this.state.isEditButtonModalVisible}
                 >
                     <View style={styles.modalContainer}>
@@ -173,6 +174,21 @@ export default class App extends Component {
                         </View>
                     </View>
                 </Modal>
+                <View>
+                    <StatusBar hidden={true} />
+                    <MainView
+                        clearDisplayText={this.clearDisplayText}
+                        updateDisplayText={this.updateDisplayText}
+                        toggleEditButton={this.toggleEditButton}
+                        launchEditButtonModal={this.launchEditButtonModal}
+
+                        displayText={this.state.displayText}
+                        isEditButtonModalVisible={this.state.isEditButtonModalVisible}
+
+                        buttons={this.state.buttons}
+                    />
+                </View>
+            </View >    
             );
 
         } else {
@@ -201,15 +217,20 @@ const styles = StyleSheet.create({
     modalContainer: {
         flex: 1,
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'center',
+        backgroundColor: '#00000000',
+        marginTop: 16
     },
     innerModal: {
-        height: screenHeight * 0.6,
+        height: screenHeight * 0.5,
         width: screenWidth * 0.7,
-        backgroundColor: 'yellow',
+        backgroundColor: '#E6E8F2',
         justifyContent: 'center',
         alignItems: 'center',
+        borderWidth: 8,
+        borderColor: '#4E598C',
+        borderRadius: 26,
     },
     modalTitle: {
         fontSize: normalize(40),
@@ -244,12 +265,16 @@ const styles = StyleSheet.create({
         width: screenWidth * 0.18,
         justifyContent: 'center',
         alignItems: 'center',
+        borderWidth: 2,
+        borderColor: 'transparent',
+        borderRadius: 5,
+        marginHorizontal: 2,
     },
     cancelEditButton: {
-        backgroundColor: 'red'
+        backgroundColor: '#DD5D46'
     },
     saveEditButton: {
-        backgroundColor: 'green'
+        backgroundColor: '#33C561'
     },
     modalButtonText: {
         fontSize: normalize(20)
