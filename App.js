@@ -7,6 +7,7 @@ const { height: screenHeight, width: screenWidth } = Dimensions.get('window');
 import MainView from './components/MainView';
 import ButtonImage from './components/Button/ButtonImage';
 import buttons from './data/buttons';
+import images from './data/images';
 import normalize from './utils/normalize';
 
 const MAX_DISPLAY_WORDS = 16;
@@ -26,7 +27,7 @@ export default class App extends Component {
             isEditButtonModalVisible: false,
             buttonToEdit_id: undefined,
             buttonToEdit_text: '',
-            buttonToEdit_imageURL: '',
+            buttonToEdit_imageID: undefined,
 
             // Search function for Edit mode
             possibleImagesForButton: [],
@@ -79,8 +80,7 @@ export default class App extends Component {
 
             isEditButtonModalVisible: true,
             buttonToEdit_id: id,
-            buttonToEdit_text: this.state.buttons[id].text,
-            buttonToEdit_imageURL: this.state.buttons[id].imageURL
+            buttonToEdit_text: this.state.buttons[id].text
         });
     }
 
@@ -92,11 +92,11 @@ export default class App extends Component {
 
         // There should be enough characters for search
         if (searchText.length > 1) {
-            for (let button of this.state.buttons) {
-                if (button.hasOwnProperty('keywords')) {
-                    for (let keyword of button.keywords) {
+            for (let image of images) {
+                if (image.hasOwnProperty('keywords')) {
+                    for (let keyword of image.keywords) {
                         if (keyword.includes(searchText)) {
-                            possibleImagesForButton.push(button);
+                            possibleImagesForButton.push(image);
                             numImagesFound++;
 
                             break;
@@ -131,7 +131,7 @@ export default class App extends Component {
                 {
                     ...this.state.buttons[index],
                     text: this.state.buttonToEdit_text,
-                    imageURL: this.state.buttonToEdit_imageURL
+                    imageID: this.state.buttonToEdit_imageID
                 },
 
                 // Keep everything after
@@ -142,7 +142,7 @@ export default class App extends Component {
             isEditButtonModalVisible: false,
             buttonToEdit_id: undefined,
             buttonToEdit_text: '',
-            buttonToEdit_imageURL: '',
+            buttonToEdit_imageID: undefined,
             possibleImagesForButton: []
         });
     }
@@ -155,7 +155,7 @@ export default class App extends Component {
             isEditButtonModalVisible: false,
             buttonToEdit_id: undefined,
             buttonToEdit_text: '',
-            buttonToEdit_imageURL: '',
+            buttonToEdit_imageID: undefined,
             possibleImagesForButton: []
         });
     }
@@ -196,25 +196,27 @@ export default class App extends Component {
                                 <View style={styles.formItemContainer}>
                                     <Text style={styles.label}>Search for Image:</Text>
                                     <TextInput
+                                        style={styles.textInput}
                                         autoFocus={true}
                                         placeholder="I'm looking for..."
                                         onChangeText={this.searchImages.bind(this)}
                                     />
 
                                     <View style={styles.flatListContainer}>
-                                        <FlatList
-                                            data={this.state.possibleImagesForButton}
-                                            renderItem={({ item }) => (
-                                                <TouchableOpacity onPress={() => {
-                                                    this.setState({
-                                                        ...this.state,
-                                                        buttonToEdit_imageURL: item.imageURL
-                                                    });
-                                                }}>
-                                                    <ButtonImage path={item.imageURL} />
-                                                </TouchableOpacity>
-                                            )}
-                                        />
+                                            <FlatList
+                                                horizontal={true}
+                                                data={this.state.possibleImagesForButton}
+                                                renderItem={({ item }) => (
+                                                    <TouchableOpacity onPress={() => {
+                                                        this.setState({
+                                                            ...this.state,
+                                                            buttonToEdit_imageID: item.id
+                                                        });
+                                                    }}>
+                                                        <ButtonImage path={item.imageURL} />
+                                                    </TouchableOpacity>
+                                                )}
+                                            />
                                     </View>
                                 </View>
 
@@ -320,7 +322,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     modalButton: {
-        height: screenHeight * 0.08,
+        height: screenHeight * 0.06,
         width: screenWidth * 0.18,
         justifyContent: 'center',
         alignItems: 'center',

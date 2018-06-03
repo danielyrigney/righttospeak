@@ -5,6 +5,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import ButtonTitle from './ButtonTitle';
 import ButtonImage from './ButtonImage';
 import Constants from '../../data/constants';
+import images from '../../data/images';
 
 export default class ButtonView extends Component {
     constructor(props) {
@@ -51,16 +52,17 @@ export default class ButtonView extends Component {
     }
 
     render() {
-        const { text } = this.state.button;
+        const { text, imageId } = this.state.button;
+        const imageURL = images.find(image => image.id === imageId).imageURL;
 
         return (
             <View style={[styles.container, { borderColor: Constants.colorScheme[this.state.button.partOfSpeech] }]}>
                 <TouchableOpacity title="" onPress={this.onPressOnView} onLongPress={this.onPressOnEdit} style={styles.touchableOpacityContainer}>
                     <View style={styles.textContainer}>
-                        <ButtonTitle title={text}/>
+                        <ButtonTitle title={text} />
                     </View>
                     <View style={styles.imageContainer}>
-                        <ButtonImage path={this.state.button.imageURL}/>
+                        <ButtonImage path={imageURL} />
                     </View>
                 </TouchableOpacity>
             </View>
