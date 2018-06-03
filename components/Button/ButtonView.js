@@ -17,7 +17,7 @@ export default class ButtonView extends Component {
             language: 'en'
         };
     }
-    
+
     speakText = () => {
         const start = () => {
             this.setState({ inProgress: true });
@@ -70,7 +70,6 @@ export default class ButtonView extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         width: '100%',
         alignItems: 'center',
         flexDirection: 'row',
@@ -78,7 +77,7 @@ const styles = StyleSheet.create({
         borderWidth: 8,
         borderColor: 'red',
         borderRadius: 30,
-        backgroundColor: 'transparent',
+        backgroundColor: 'transparent'
     },
     touchableOpacityContainer: {
         flex: 1,
