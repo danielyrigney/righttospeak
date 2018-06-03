@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Dimensions, Platform, PixelRatio, StyleSheet, Text } from 'react-native';
 
-import normalize from './../../tools/normalize';
+import normalize from './../../utils/normalize';
 
 export default class ButtonTitle extends Component {
     render() {
