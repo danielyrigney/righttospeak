@@ -3,28 +3,60 @@ import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import ButtonTitle from './ButtonTitle';
 import ButtonImage from './ButtonImage';
 
+import { Constants, Speech } from 'expo';
+
 export default class ButtonView extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            button: props.button
+            button: props.button,
+            pitch: 1,
+            rate: 0.75,
+            language: 'en'
         };
     }
 
-    updateDisplayText = () => {
-        const { text } = this.state.button;
+    speakText = () => {
+        const start = () => {
+            this.setState({ inProgress: true });
+        };
+        const complete = () => {
+            this.state.inProgress && this.setState({ inProgress: false });
+        };
 
+        Speech.speak(this.state.button.text, {
+            language: this.state.language,
+            pitch: this.state.pitch,
+            rate: this.state.rate,
+            onStart: start,
+            onDone: complete,
+            onStopped: complete,
+            onError: complete,
+        });
+    };
+
+    onPressOnView = () => {
+        const { text } = this.state.button;
         this.props.updateDisplayText(text);
+        this.speakText();
+    }
+
+    onPressOnEdit = () => {
+      this.props.launchEditButtonModal();
     }
 
     render() {
         const { text } = this.state.button;
 
+        const onPress = () => {
+          this.props.isEditingButton ? this.onPressOnEdit() : this.onPressOnView();
+        };
+
         return (
             <View style={styles.container}>
 
-                <TouchableOpacity title="" onPress={this.updateDisplayText} style={styles.touchableOpacityContainer}>
+                <TouchableOpacity title="" onPress={onPress} style={styles.touchableOpacityContainer}>
                     <View style={styles.textContainer}>
                         <ButtonTitle title={this.state.button.text}/>
                     </View>
@@ -40,10 +72,11 @@ export default class ButtonView extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        width: '100%',
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
-        borderWidth: 5, 
+        borderWidth: 5,
         borderColor: 'red',
         borderRadius: 50,
         backgroundColor: 'pink',
