@@ -39,7 +39,7 @@ const Board = (props) => {
       mdSize={sizes.md}
       lgSize={sizes.lg}
       xlSize={sizes.xl} 
-      style={{backgroundColor: buttonColor}}
+      style={{backgroundColor: 'white'}}
     >
       <Row 
           smSizePoints={props.state.layout.grid ? props.state.layout.grid.height / 2 : 0} 

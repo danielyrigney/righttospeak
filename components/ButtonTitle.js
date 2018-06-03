@@ -18,7 +18,7 @@ const normalize = (size) => {
 export default class ButtonTitle extends Component {
   render() {
     return (
-        <Text>{this.props.title}</Text>
+        <Text style={styles.text}>{this.props.title}</Text>
     )
   }
 }
