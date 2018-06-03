@@ -267,12 +267,12 @@ export default class App extends Component {
                                     </View>
 
                                     <View style={styles.formCancelButtons}>
-                                        <TouchableHighlight onPress={this.saveEditButton} style={[styles.modalButton, styles.saveEditButton]}>
-                                            <Text style={styles.modalButtonText}>Save</Text>
-                                        </TouchableHighlight>
-
                                         <TouchableHighlight onPress={this.cancelEditButton} style={[styles.modalButton, styles.cancelEditButton]}>
                                             <Text style={styles.modalButtonText}>Cancel</Text>
+                                        </TouchableHighlight>
+
+                                        <TouchableHighlight onPress={this.saveEditButton} style={[styles.modalButton, styles.saveEditButton]}>
+                                            <Text style={styles.modalButtonText}>Save</Text>
                                         </TouchableHighlight>
                                     </View>
                                 </View>
@@ -393,7 +393,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#ef9a9a'
     },
     saveEditButton: {
-        backgroundColor: '#c8e6c9'
+        backgroundColor: '#b8e0b9'
     },
     modalButtonText: {
         fontSize: normalize(20)

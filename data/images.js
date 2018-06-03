@@ -255,7 +255,7 @@ export default images = [
         id: '41',
         imageURL: require('../assets/A/actor1_P.bmp'),
         keywords: ['people', 'person', 'tv', 'movies', 'films'],
-        categories: ['people']
+        categories: ['people', 'things']
     },
     {
         id: '42',

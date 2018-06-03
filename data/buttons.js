@@ -239,7 +239,7 @@ export default buttons = [
     },
     {
         id: '16',
-        text: 'Go',
+        text: 'Start',
         partOfSpeech: 'verb',
         type: 'core',
         imageId: '11',
@@ -253,28 +253,28 @@ export default buttons = [
     },
     {
         id: '17',
-        text: 'Away',
-        partOfSpeech: 'adverb',
+        text: 'Mom',
+        partOfSpeech: 'noun',
         type: 'core',
-        imageId: '12',
+        imageId: '48',
         coordinates: {
             '8_5': {
-                x: 2,
-                y: 3
+                x: 3,
+                y: 9
             }
         },
         boards: ['0']
     },
     {
         id: '18',
-        text: 'Any',
-        partOfSpeech: 'adverb',
+        text: 'Dad',
+        partOfSpeech: 'noun',
         type: 'core',
-        imageId: '13',
+        imageId: '49',
         coordinates: {
             '8_5': {
-                x: 3,
-                y: 3
+                x: 4,
+                y: 9
             }
         },
         boards: ['0']
@@ -309,7 +309,7 @@ export default buttons = [
     },
     {
         id: '21',
-        text: 'Goodbye',
+        text: 'Bye',
         partOfSpeech: 'interjection',
         type: 'core',
         imageId: '16',
@@ -435,7 +435,7 @@ export default buttons = [
     },
     {
         id: '30',
-        text: 'River',
+        text: 'Water',
         partOfSpeech: 'noun',
         type: 'fringe',
         imageId: '30',
@@ -449,7 +449,7 @@ export default buttons = [
     },
     {
         id: '31',
-        text: 'Fly',
+        text: 'Bug',
         partOfSpeech: 'noun',
         type: 'fringe',
         imageId: '31',
@@ -589,7 +589,7 @@ export default buttons = [
     },
     {
         id: '41',
-        text: 'Actor',
+        text: 'TV',
         partOfSpeech: 'noun',
         type: 'fringe',
         imageId: '41',
@@ -687,30 +687,30 @@ export default buttons = [
     },
     {
         id: '48',
-        text: 'Mom',
-        partOfSpeech: 'noun',
+        text: 'Away',
+        partOfSpeech: 'adverb',
         type: 'core',
-        imageId: '48',
+        imageId: '12',
         coordinates: {
             '8_5': {
-                x: 3,
-                y: 9
+                x: 2,
+                y: 3
             }
         },
         boards: ['0']
     },
     {
         id: '49',
-        text: 'Father',
-        partOfSpeech: 'noun',
+        text: 'Any',
+        partOfSpeech: 'adverb',
         type: 'core',
-        imageId: '49',
+        imageId: '13',
         coordinates: {
             '8_5': {
-                x: 4,
-                y: 9
+                x: 3,
+                y: 3
             }
         },
         boards: ['0']
-    }
+    },
 ];
