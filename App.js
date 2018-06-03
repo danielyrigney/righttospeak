@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StatusBar } from 'react-native';
+import { StatusBar, View, Modal, TouchableHighlight, Text } from 'react-native';
 import Expo from 'expo';
 
 import MainView from './components/MainView';
@@ -10,8 +10,13 @@ export default class App extends Component {
     super(props);
 
     this.state = {
+      // View mode
       displayText: '',
-      isEditingButton: false
+      buttons: buttons,
+
+      // Edit mode
+      buttonToEdit_id: undefined,
+      isEditButtonModalVisible: false
     };
   }
 
@@ -21,9 +26,9 @@ export default class App extends Component {
 
   componentWillUnmount() {
     Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.PORTRAIT);
-
   }
 
+  // Display Text
   clearDisplayText = () => {
     this.setState({
       ...this.state,
@@ -38,6 +43,7 @@ export default class App extends Component {
     });
   }
 
+  // Edit Button
   toggleEditButton = () => {
     this.setState({
       ...this.state,
@@ -45,22 +51,62 @@ export default class App extends Component {
     });
   }
 
-  launchEditButtonModal = () => {
+  launchEditButtonModal = (button) => {
+    this.setState({
+      ...this.state,
+      isEditButtonModalVisible: true
+    });
+  }
+
+  setEditModalButtonVisible = (isVisible) => {
+    this.setState({
+      ...this.state,
+      isEditButtonModalVisible: isVisible
+    });
   }
   
   render() {
-    return (
-      <View>
-        <StatusBar hidden={true} />
-        <MainView
-          clearDisplayText={this.clearDisplayText}
-          updateDisplayText={this.updateDisplayText}
-          toggleEditButton={this.toggleEditButton}
-          launchEditButtonModal={this.launchEditButtonModal}
-          isEditingButton={this.state.isEditingButton}
-          displayText={this.state.displayText}
-          buttons={buttons} />
-      </View>
-    );
+    if (this.state.isEditButtonModalVisible) {
+      return (
+          <Modal
+            animationType="slide"
+            transparent={false}
+            visible={this.state.isEditButtonModalVisible}
+          >
+          <View style={{marginTop: 22}}>
+            <View>
+              <Text>Hello World!</Text>
+
+              <TouchableHighlight
+                onPress={() => {
+                  this.setEditModalButtonVisible(!this.state.isEditButtonModalVisible);
+                }}
+              >
+                <Text>Submit</Text>
+              </TouchableHighlight>
+            </View>
+          </View>
+        </Modal>
+      );
+
+    } else {
+      return (
+        <View>
+          <StatusBar hidden={true} />
+          <MainView
+            clearDisplayText={this.clearDisplayText}
+            updateDisplayText={this.updateDisplayText}
+            toggleEditButton={this.toggleEditButton}
+            launchEditButtonModal={this.launchEditButtonModal}
+
+            displayText={this.state.displayText}
+            isEditButtonModalVisible={this.state.isEditButtonModalVisible}
+
+            buttons={this.state.buttons}
+          />
+        </View>
+      );
+
+    }
   }
 }

@@ -38,24 +38,23 @@ export default class ButtonView extends Component {
 
     onPressOnView = () => {
         const { text } = this.state.button;
+
         this.props.updateDisplayText(text);
         this.speakText();
     }
 
     onPressOnEdit = () => {
-      this.props.launchEditButtonModal();
+        const { id } = this.state.button;
+
+        this.props.launchEditButtonModal(id);
     }
 
     render() {
         const { text } = this.state.button;
 
-        const onPress = () => {
-          this.props.isEditingButton ? this.onPressOnEdit() : this.onPressOnView();
-        };
-
         return (
             <View style={[styles.container, {borderColor: Constants.colorScheme[this.state.button.partOfSpeech]}]}>
-                <TouchableOpacity title="" onPress={onPress} style={styles.touchableOpacityContainer}>
+                <TouchableOpacity title="" onPress={this.onPressOnView} onLongPress={this.onPressOnEdit} style={styles.touchableOpacityContainer}>
                     <View style={styles.imageContainer}>
                         <ButtonImage path={this.state.button.imageURL}/>
                     </View>

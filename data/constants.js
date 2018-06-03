@@ -9,4 +9,4 @@ export default Constants = {
         place: 'purple',
         preposition: 'gray'
     }
-}
+};

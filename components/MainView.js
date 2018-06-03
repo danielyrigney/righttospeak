@@ -18,7 +18,6 @@ export default class MainView extends Component {
         />
 
         <Body
-          isEditingButton={this.props.isEditingButton}
           buttons={this.props.buttons}
           updateDisplayText={this.props.updateDisplayText}
           launchEditButtonModal={this.props.launchEditButtonModal}

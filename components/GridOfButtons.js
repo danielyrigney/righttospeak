@@ -58,7 +58,6 @@ const Board = (props) => {
                   button={button}
                   updateDisplayText={properties.updateDisplayText}
                   launchEditButtonModal={properties.launchEditButtonModal}
-                  isEditingButton={properties.isEditingButton}
                 />
 
                </Text>

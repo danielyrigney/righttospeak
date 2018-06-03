@@ -5,28 +5,15 @@ import GridOfButtons from './GridOfButtons';
 
 export default class Body extends Component {
   render() {
-
-    const editMode = () => (
+    return (
       <View style={styles.container}>
         <GridOfButtons
           buttons={this.props.buttons}
-          isEditingButton={this.props.isEditingButton}
+          updateDisplayText={this.props.updateDisplayText}
           launchEditButtonModal={this.props.launchEditButtonModal}
         />
       </View>
     );
-
-    const viewMode = () => (
-      <View style={styles.container}>
-        <GridOfButtons
-          buttons={this.props.buttons}
-          isEditingButton={this.props.isEditingButton}
-          updateDisplayText={this.props.updateDisplayText}
-        />
-      </View>
-    );
-
-    return this.props.isEditingButton ? editMode() : viewMode();
   }
 }
 
