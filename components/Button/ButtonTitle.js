@@ -11,9 +11,11 @@ export default class ButtonTitle extends Component {
     }
 }
 
+// CSS Style
 const styles = StyleSheet.create({
     text: {
         textAlign: 'center',
+        // uses util function to normalize font
         fontSize: normalize(50),
     }
 });

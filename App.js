@@ -29,11 +29,12 @@ export default class App extends Component {
         };
     }
 
-    // life cycle method - ensures component is mounted before turning screen
+    // Life Cycle Method - Ensures component is mounted before turning screen
     componentDidMount() {
         Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.LANDSCAPE_RIGHT);
     }
 
+    // Life Cycle Method - Ensures component will unmount before changing orientation back to portrait
     componentWillUnmount() {
         Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.PORTRAIT);
     }
@@ -209,6 +210,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+
     innerModal: {
         height: screenHeight * 0.6,
         width: screenWidth * 0.7,
