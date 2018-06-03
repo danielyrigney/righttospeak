@@ -9,7 +9,7 @@ export default class Outputs extends Component {
     return (
       <View>
         <View style={styles.imageContainer}>
-          <ButtonImage path={this.props.imageURL}/>
+          <ButtonImage path={this.props.imageURL} resizeMode="contain"/>
           <Text numberOfLines={1} ellipsizeMode="head" style={styles.displayText}>{this.props.displayText}</Text>
         </View>
       </View>

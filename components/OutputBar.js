@@ -15,7 +15,7 @@ export default class OutputBar extends Component {
 
                 {/* Text Display from pressed button */}
                 <View style={styles.displayTextContainer}>
-                  {displaySymbols.map(symbol => <Output displayText={symbol.displayText} displayImage={symbol.imageURL}/>)}
+                  {displaySymbols.map(symbol => <Output displayText={symbol.displayText} imageURL={symbol.imageURL}/>)}
                 </View>
 
                 {/* Button to clear the display text */}
