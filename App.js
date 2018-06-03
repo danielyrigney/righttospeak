@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StatusBar, StyleSheet, View, Modal, TouchableHighlight, Text, TextInput } from 'react-native';
+import { StatusBar, StyleSheet, View, Modal, FlatList, TouchableHighlight, Text, TextInput } from 'react-native';
 import Expo from 'expo';
 
 import MainView from './components/MainView';
@@ -7,6 +7,7 @@ import ButtonImage from './components/Button/ButtonImage';
 import buttons from './data/buttons';
 
 const MAX_DISPLAY_WORDS = 16;
+const MAX_IMAGE_SEARCH_RESULTS = 5;
 
 export default class App extends Component {
     constructor(props) {
@@ -22,7 +23,10 @@ export default class App extends Component {
             isEditButtonModalVisible: false,
             buttonToEdit_id: undefined,
             buttonToEdit_text: '',
-            buttonToEdit_imageURL: ''
+            buttonToEdit_imageURL: '',
+
+            // Search function for Edit mode
+            possibleImagesForButton: [],
         };
     }
 
@@ -73,7 +77,39 @@ export default class App extends Component {
             isEditButtonModalVisible: true,
             buttonToEdit_id: id,
             buttonToEdit_text: this.state.buttons[id].text,
-            buttonToEdit_imageURL: this.state.buttons[id].imageURL,
+            buttonToEdit_imageURL: this.state.buttons[id].imageURL
+        });
+    }
+
+    searchImages = (searchText) => {
+        searchText = searchText.toLowerCase();
+
+        let possibleImagesForButton = [];
+        let numImagesFound = 0;
+
+        // There should be enough characters for search
+        if (searchText.length > 1) {
+            for (let button of this.state.buttons) {
+                if (button.hasOwnProperty('keywords')) {
+                    for (let keyword of button.keywords) {
+                        if (keyword.includes(searchText)) {
+                            possibleImagesForButton.push(button);
+                            numImagesFound++;
+
+                            break;
+                        }
+                    }
+
+                    if (numImagesFound === MAX_IMAGE_SEARCH_RESULTS) {
+                        break;
+                    }
+                }
+            }
+        }
+
+        this.setState({
+            ...this.state,
+            possibleImagesForButton
         });
     }
 
@@ -102,7 +138,8 @@ export default class App extends Component {
             isEditButtonModalVisible: false,
             buttonToEdit_id: undefined,
             buttonToEdit_text: '',
-            buttonToEdit_imageURL: ''
+            buttonToEdit_imageURL: '',
+            possibleImagesForButton: []
         });
     }
 
@@ -114,7 +151,8 @@ export default class App extends Component {
             isEditButtonModalVisible: false,
             buttonToEdit_id: undefined,
             buttonToEdit_text: '',
-            buttonToEdit_imageURL: ''
+            buttonToEdit_imageURL: '',
+            possibleImagesForButton: []
         });
     }
     
@@ -135,7 +173,7 @@ export default class App extends Component {
                                 <Text style={styles.label}>Button Text:</Text>
                                 <TextInput
                                     autoFocus={true}
-                                    placeholder="Please enter a text for this button."
+                                    placeholder="I want to say..."
                                     value={this.state.buttonToEdit_text}
                                     onChangeText={(newName) => {
                                         this.setState({
@@ -147,10 +185,17 @@ export default class App extends Component {
                             </View>
 
                             <View style={styles.formItemContainer}>
-                                <Text style={styles.label}>Select Image:</Text>
-                                <View style={styles.imageContainer}>
-                                    <ButtonImage path={this.state.buttonToEdit_imageURL}/>
-                                </View>
+                                <Text style={styles.label}>Search for Image:</Text>
+                                <TextInput
+                                    autoFocus={true}
+                                    placeholder="I'm looking for..."
+                                    onChangeText={this.searchImages.bind(this)}
+                                />
+
+                                <FlatList
+                                    data={this.state.possibleImagesForButton}
+                                    renderItem={({ item }) => <ButtonImage path={item.imageURL} />}
+                                />
                             </View>
 
                             <TouchableHighlight onPress={this.cancelEditButton}>

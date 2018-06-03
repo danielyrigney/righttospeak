@@ -11,7 +11,8 @@ export default buttons = [
                 y: 0
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['me', 'my', 'girl']
     }, {
         id: '1',
         text: 'Me',
@@ -24,7 +25,8 @@ export default buttons = [
                 y: 0
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['i', 'my', 'gift']
     }, {
         id: '2',
         text: 'My',
@@ -37,7 +39,8 @@ export default buttons = [
                 y: 0
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['i', 'me', 'want']
     }, {
         id: '3',
         text: 'Want',
@@ -50,7 +53,8 @@ export default buttons = [
                 y: 0
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['i', 'me', 'take']
     }, {
         id: '4',
         text: 'Him',
@@ -63,7 +67,8 @@ export default buttons = [
                 y: 0
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['he', 'present', 'give']
     }, {
         id: '5',
         text: 'Her',
@@ -76,7 +81,8 @@ export default buttons = [
                 y: 1
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['she', 'her', 'present']
     }, {
         id: '6',
         text: 'She',
@@ -89,7 +95,8 @@ export default buttons = [
                 y: 1
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['her', 'he', 'they']
     }, {
         id: '7',
         text: 'He',
@@ -102,7 +109,8 @@ export default buttons = [
                 y: 1
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['him', 'her', 'they']
     }, {
         id: '8',
         text: 'Like',
@@ -115,7 +123,8 @@ export default buttons = [
                 y: 1
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['happy', 'sun', 'light']
     }, {
         id: '9',
         text: 'Stop',
@@ -128,7 +137,8 @@ export default buttons = [
                 y: 1
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['sign', 'red', 'traffic']
     }, {
         id: '10',
         text: 'Come',
@@ -141,7 +151,8 @@ export default buttons = [
                 y: 2
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['giant dog', 'pet', 'here']
     }, {
         id: '11',
         text: 'Go',
@@ -154,7 +165,8 @@ export default buttons = [
                 y: 2
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['green', 'right', 'away']
     }, {
         id: '12',
         text: 'Away',
@@ -167,7 +179,8 @@ export default buttons = [
                 y: 2
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['leave', 'goodbye', 'go']
     }, {
         id: '13',
         text: 'Any',
@@ -180,7 +193,8 @@ export default buttons = [
                 y: 2
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['all', 'anything', 'questions']
     }, {
         id: '14',
         text: 'Nothing',
@@ -193,7 +207,8 @@ export default buttons = [
                 y: 2
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['empty', 'truck', 'big']
     }, {
         id: '15',
         text: 'Hello',
@@ -206,7 +221,8 @@ export default buttons = [
                 y: 3
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['goodbye', 'answer', 'phone']
     }, {
         id: '16',
         text: 'Goodbye',
@@ -219,7 +235,8 @@ export default buttons = [
                 y: 3
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['hello', 'go', 'away']
     }, {
         id: '17',
         text: 'Little',
@@ -232,7 +249,8 @@ export default buttons = [
                 y: 3
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['big', 'under', 'cat']
     }, {
         id: '18',
         text: 'Big',
@@ -245,7 +263,8 @@ export default buttons = [
                 y: 3
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['little', 'dog', 'me']
     }, {
         id: '19',
         text: 'Wait',
@@ -258,7 +277,8 @@ export default buttons = [
                 y: 3
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['come', 'stop', 'leave']
     }, {
         id: '20',
         text: 'Over',
@@ -271,7 +291,8 @@ export default buttons = [
                 y: 4
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['under', 'finish', 'done']
     }, {
         id: '21',
         text: 'Under',
@@ -284,7 +305,8 @@ export default buttons = [
                 y: 4
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['over', 'beneath', 'next']
     }, {
         id: '22',
         text: 'Left',
@@ -297,7 +319,8 @@ export default buttons = [
                 y: 4
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['leave', 'right', 'side']
     }, {
         id: '23',
         text: 'Right',
@@ -310,7 +333,8 @@ export default buttons = [
                 y: 4
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['leave', 'right', 'side']
     }, {
         id: '24',
         text: 'Leave',
@@ -336,7 +360,8 @@ export default buttons = [
                 y: 0
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['any', 'us', 'them']
     },
     {
         id: '26',
@@ -350,7 +375,8 @@ export default buttons = [
                 y: 1
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['taco', 'eat', 'hungry']
     },
     {
         id: '27',
@@ -364,7 +390,8 @@ export default buttons = [
                 y: 2
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['fun', 'like', 'jump']
     },
     {
         id: '28',
@@ -378,7 +405,8 @@ export default buttons = [
                 y: 3
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['fun', 'like', 'jump']
     },
     {
         id: '29',
@@ -392,7 +420,8 @@ export default buttons = [
                 y: 4
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['all', 'truck', 'car']
     },
     {
         id: '30',
@@ -406,7 +435,8 @@ export default buttons = [
                 y: 0
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['water', 'beach', 'place']
     },
     {
         id: '31',
@@ -420,7 +450,8 @@ export default buttons = [
                 y: 1
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['bug', 'wings', 'insect']
     },
     {
         id: '32',
@@ -434,7 +465,8 @@ export default buttons = [
                 y: 2
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['he', 'surgeon', 'him']
     },
     {
         id: '33',
@@ -448,7 +480,8 @@ export default buttons = [
                 y: 3
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['food', 'eat', 'hungry']
     },
     {
         id: '34',
@@ -462,7 +495,8 @@ export default buttons = [
                 y: 4
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['bike', 'ride', 'wheels']
     },
     {
         id: '35',
@@ -476,7 +510,8 @@ export default buttons = [
                 y: 0
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['big', 'ride', 'wheels']
     },
     {
         id: '36',
@@ -490,7 +525,8 @@ export default buttons = [
                 y: 1
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['stop', 'job', 'cop']
     },
     {
         id: '37',
@@ -504,7 +540,8 @@ export default buttons = [
                 y: 2
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['can', 'bin', 'garbage']
     },
     {
         id: '38',
@@ -518,7 +555,8 @@ export default buttons = [
                 y: 3
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['animal', 'kitty', 'kitten']
     },
     {
         id: '39',
@@ -532,6 +570,7 @@ export default buttons = [
                 y: 4
             }
         },
-        boards: ['0']
+        boards: ['0'],
+        keywords: ['animal', 'fur', 'puppy']
     }
 ];
