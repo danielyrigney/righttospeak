@@ -3,6 +3,7 @@ import { Dimensions, Platform, PixelRatio, StyleSheet, Text } from 'react-native
 
 import normalize from './../../utils/normalize';
 
+// button text
 export default class ButtonTitle extends Component {
     render() {
         return (

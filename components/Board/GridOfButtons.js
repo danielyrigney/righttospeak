@@ -28,6 +28,7 @@ const showAll = (e) => {
     });
 };
 
+// defines grid's columns and rows
 const Board = (props) => {
     const { button, properties } = props;
     const buttonColor = Constants.colorScheme[button.partOfSpeech];
@@ -72,6 +73,7 @@ const layout = (buttons, state, props) => {
     });
 };
 
+// scrollable grid with buttons
 export default class GridOfButtons extends Component {
     render() {
         const { buttons } = this.props;
