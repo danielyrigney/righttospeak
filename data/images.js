@@ -1,8 +1,8 @@
 export default images = [
     {
         id: '-1',
-        imageURL: require('../assets/I/I1_P.bmp'),
-        keywords: ['me', 'my', 'girl', 'self'],
+        imageURL: require('../assets/L/look_P.bmp'),
+        keywords: ['face', 'brow', 'eye'],
         categories: ['things']
     },
     {

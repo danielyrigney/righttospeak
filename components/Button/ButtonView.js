@@ -57,9 +57,11 @@ export default class ButtonView extends Component {
 
     // edit mode opened when button is long pressed
     onPressOnEdit = () => {
-        const { id } = this.state.button;
+        const { id, type } = this.state.button;
 
-        this.props.launchEditButtonModal(id);
+        if (type !== 'action') {
+            this.props.launchEditButtonModal(id);
+        }
     }
 
     render() {

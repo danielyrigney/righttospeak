@@ -213,88 +213,88 @@ export default class App extends Component {
             let button = this.state.buttons[id];
 
             return (
-            <View>
-                <Modal
-                    animationType="slide"
-                    transparent={true}
-                    visible={this.state.isEditButtonModalVisible}
-                >
-                    <View style={styles.modalContainer}>
-                        <View style={styles.innerModal}>
-                            <StatusBar hidden={true} />
-                            <Text style={styles.modalTitle}>Edit Button Details</Text>
-                            <View style={styles.outerFormContainer}>
-                                <View style={styles.formItemContainer}>
-                                    <Text style={styles.label}>Button Text:</Text>
-                                    <TextInput
-                                        style={styles.textInput}
-                                        autoFocus={true}
-                                        placeholder="Please enter a text for this button."
-                                        value={this.state.buttonToEdit_text}
-                                        onChangeText={(newName) => {
-                                            this.setState({
-                                                ...this.state,
-                                                buttonToEdit_text: newName
-                                            });
-                                        }}
-                                    />
-                                </View>
-
-                                <View style={styles.formItemContainer}>
-                                    <Text style={styles.label}>Search for Image:</Text>
-                                    <TextInput
-                                        style={styles.textInput}
-                                        autoFocus={true}
-                                        placeholder="I'm looking for..."
-                                        onChangeText={this.searchImages.bind(this)}
-                                    />
-
-                                    <View style={styles.flatListContainer}>
-                                        <FlatList
-                                            horizontal={true}
-                                            data={this.state.possibleImagesForButton}
-                                            renderItem={({ item }) => (
-                                                <TouchableOpacity onPress={() => {
-                                                    this.setState({
-                                                        ...this.state,
-                                                        buttonToEdit_imageId: item.id
-                                                    });
-                                                }}>
-                                                    <ButtonImage path={item.imageURL} />
-                                                </TouchableOpacity>
-                                            )}
+                <View>
+                    <Modal
+                        animationType="slide"
+                        transparent={true}
+                        visible={this.state.isEditButtonModalVisible}
+                    >
+                        <View style={styles.modalContainer}>
+                            <View style={styles.innerModal}>
+                                <StatusBar hidden={true} />
+                                <Text style={styles.modalTitle}>Edit Button Details</Text>
+                                <View style={styles.outerFormContainer}>
+                                    <View style={styles.formItemContainer}>
+                                        <Text style={styles.label}>Button Text:</Text>
+                                        <TextInput
+                                            style={styles.textInput}
+                                            autoFocus={true}
+                                            placeholder="Please enter a text for this button."
+                                            value={this.state.buttonToEdit_text}
+                                            onChangeText={(newName) => {
+                                                this.setState({
+                                                    ...this.state,
+                                                    buttonToEdit_text: newName
+                                                });
+                                            }}
                                         />
                                     </View>
-                                </View>
 
-                                <View style={styles.formCancelButtons}>
-                                    <TouchableHighlight onPress={this.saveEditButton} style={[styles.modalButton, styles.saveEditButton]}>
-                                        <Text style={styles.modalButtonText}>Save</Text>
-                                    </TouchableHighlight>
+                                    <View style={styles.formItemContainer}>
+                                        <Text style={styles.label}>Search for Image:</Text>
+                                        <TextInput
+                                            style={styles.textInput}
+                                            autoFocus={true}
+                                            placeholder="I'm looking for..."
+                                            onChangeText={this.searchImages.bind(this)}
+                                        />
 
-                                    <TouchableHighlight onPress={this.cancelEditButton} style={[styles.modalButton, styles.cancelEditButton]}>
-                                        <Text style={styles.modalButtonText}>Cancel</Text>
-                                    </TouchableHighlight>
+                                        <View style={styles.flatListContainer}>
+                                            <FlatList
+                                                horizontal={true}
+                                                data={this.state.possibleImagesForButton}
+                                                renderItem={({ item }) => (
+                                                    <TouchableOpacity onPress={() => {
+                                                        this.setState({
+                                                            ...this.state,
+                                                            buttonToEdit_imageId: item.id
+                                                        });
+                                                    }}>
+                                                        <ButtonImage path={item.imageURL} />
+                                                    </TouchableOpacity>
+                                                )}
+                                            />
+                                        </View>
+                                    </View>
+
+                                    <View style={styles.formCancelButtons}>
+                                        <TouchableHighlight onPress={this.saveEditButton} style={[styles.modalButton, styles.saveEditButton]}>
+                                            <Text style={styles.modalButtonText}>Save</Text>
+                                        </TouchableHighlight>
+
+                                        <TouchableHighlight onPress={this.cancelEditButton} style={[styles.modalButton, styles.cancelEditButton]}>
+                                            <Text style={styles.modalButtonText}>Cancel</Text>
+                                        </TouchableHighlight>
+                                    </View>
                                 </View>
                             </View>
                         </View>
+                    </Modal>
+                    <View>
+                        <StatusBar hidden={true} />
+                        <MainView
+                            clearDisplayText={this.clearDisplayText}
+                            updateDisplayText={this.updateDisplayText}
+                            toggleEditButton={this.toggleEditButton}
+                            launchEditButtonModal={this.launchEditButtonModal}
+
+                            displayText={this.state.displayText}
+                            isEditButtonModalVisible={this.state.isEditButtonModalVisible}
+
+                            buttons={this.state.buttons}
+                        />
                     </View>
-                </Modal>
-                <View>
-                    <StatusBar hidden={true} />
-                    <MainView
-                        clearDisplayText={this.clearDisplayText}
-                        updateDisplayText={this.updateDisplayText}
-                        toggleEditButton={this.toggleEditButton}
-                        launchEditButtonModal={this.launchEditButtonModal}
-
-                        displayText={this.state.displayText}
-                        isEditButtonModalVisible={this.state.isEditButtonModalVisible}
-
-                        buttons={this.state.buttons}
-                    />
-                </View>
-            </View >
+                </View >
             );
 
         } else {

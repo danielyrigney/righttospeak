@@ -4,7 +4,7 @@ export default buttons = [
         text: 'All',
         partOfSpeech: '',
         type: 'action',
-        imageId: '25',
+        imageId: '-1',
         coordinates: {
             '8_5': {
                 x: 0,
