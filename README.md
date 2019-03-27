@@ -10,6 +10,8 @@ With the assistance of technology, we can help those affected to communicate the
 
 Right to Speak is our solution to this desparate need. This open-source Alternative and Augmentative Communication App is written in React Native for iOS and Android as part of the 2018 ATX Hack for Change Hackathon. 
 
+Demo video: https://www.youtube.com/watch?v=J0kFTHutpXs
+
 ## How to use Right to Speak:
 
 Open the application on the device.
